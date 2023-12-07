@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+  <title>Sagar Rudagi</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+</head>
+<body>
+
+  <header>
+      <h1 class="name acme">SAGAR RUDAGI</h1>    
+
+      <a onClick="openTab(this)" href="#" name="SagarRudagi_Resume.pdf"><button class="resume acme">Resume</button></a>
+
+      <script type="text/javascript">
+            function openTab(th)
+            {
+                window.open(th.name,'_blank');
+            }
+        </script>
+  </header>
+
+  <div class="parent-container"> 
+    <div class="intro mont">
+      <h1 class="detail-name w600 acme">Sagar Rudagi</h1>
+      <h3 class="blue acme">Masters in Computer Science - Arizona State University</h4>
+      <h3>Data Scientist and Analyst.</h3>
+      <p align="center">
+        Data magician who turns numbers into insights and transforms chaos into clarity!
+      </p>
+      <img src="dev-ed-wave.png" width="400" height="300"> 
+      <p class="dive acme">Let's dive deeper !!</p>
+      <img src="icons8-down-94.png">
+    </div>
+  </div> 
+
+  <div class="experience">
+    <h1 class="exp-title mont w600">Work Experience</h1>
+    <table class="exp-table">
+      <tr>
+
+          <td>
+            <div id="item1" class="item mont">
+              <p class="exp-block acme">Data Insights and Analytics Engineer</p>
+              <div id="details1" class="details">
+                <p class="acme company-name">TE Connectivity Services India</p>
+                <p>Bangalore, India</p>
+                <p>Aug 2020 - July 2021</p>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, MS-SQL, Excel, AWS - Redshift, Athena, S3, CodeBuild, CodePipeline, DevOps, Cassandra, Hive</p>
+                <p><span class="w600">Skills:</span> Data Analysis, Data Validation, Process Automation, Continuous Development, ETL</p>
+                <p class="overview"><span class="w600">Overview:</span> In my Cloud Migration Project, I ensured smooth data transition to AWS Redshift through thorough data validation. I developed code pipelines using DevOps and Jenkins to automate workflows, increasing project efficiency. Leveraging my expertise in data validation and automation, I played a pivotal role in successful data migration. This hands-on experience enhanced my skills in cloud-based data management, DevOps, and workflow automation.</p>
+              </div>              
+            </div>
+          </td>
+
+          <td>
+            <div id="item2" class="item mont">
+              <p class="exp-block acme">Data Scientist</p>
+              <div id="details2" class="details">
+                <p class="acme company-name">Docintosh</p>
+                <p>Bangalore, India</p>
+                <p>Aug 2020 - July 2021</p>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, ML Libraries, MySQL, Excel, AWS - S3, DynamoDB, Athena, Lambda, SageMaker, Tableau</p>
+                <p><span class="w600">Skills:</span> Data Preprocessing, Data Analysis, Data Validation, Hypothesis testing, Predictive Modelling, Dashboarding, Insights Reports Preparation</p>
+                <p class="overview"><span class="w600">Overview:</span> In my role as a Data Scientist at Docintosh, I leverage healthcare data for actionable insights. Analyzing 10,000+ patient records, I achieved a 20% decrease in readmission rates. With 85% accuracy, I forecasted stock returns using advanced statistical techniques. Data cleaning efforts reduced inconsistencies by 80%, ensuring data integrity. Leading a team, I developed captivating Tableau visualizations, boosting data comprehension by 30%. Through A/B testing, I achieved a 25% improvement in patient engagement metrics, enhancing satisfaction and treatment adherence.</p>
+              </div>   
+            </div>
+          </td>
+
+          <td>
+            <div id="item3" class="item mont">
+              <p class="exp-block acme">Data Analyst</p>
+              <div id="details3" class="details">
+                <p class="acme company-name">Indian Institute of Technology</p>
+                <p>Kharagpur, India</p>
+                <p>Aug 2020 - July 2021</p>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, MySQL, API, BeautifulSoup, Excel</p>
+                <p><span class="w600">Skills:</span> Data Preprocessing, Data Analysis, Hypothesis testing, Result Reporting, Documentation</p>
+                <p class="overview"><span class="w600">Overview:</span> In a project focused on stock market analysis, I skillfully gathered and preprocessed data from the National Stock Exchange portal, ensuring data integrity and accuracy. Utilizing my expertise in machine learning, I applied advanced algorithms to analyze the data and predict stock returns. To further evaluate the market dynamics, I conducted a two-tailed test to assess information asymmetry in stock returns, providing valuable insights to stakeholders. Through this project, I gained hands-on experience in data collection, preprocessing, machine learning algorithm application, and statistical analysis, demonstrating my proficiency in utilizing data-driven approaches for stock market analysis.</p>
+              </div>
+            </div>
+          </td>
+
+      </tr>
+      <tr>
+
+        <td>
+          <button id="expand1" class="expand acme" onclick="expandFunction('expand1','item1','details1');">Expand</button>
+        </td>
+
+        <td>
+          <button id="expand2" class="expand acme" onclick="expandFunction('expand2','item2','details2');">Expand</button>
+        </td>
+
+        <td>
+          <button id="expand3" class="expand acme" onclick="expandFunction('expand3','item3','details3');">Expand</button>
+        </td>
+
+        <script type="text/javascript">
+            function expandFunction(varB,varI,varD) {
+              var text = document.getElementById(varB);
+              var block = document.getElementById(varI);
+              var detail = document.getElementById(varD);
+
+              if(text.innerHTML == "Expand"){
+                block.style.width = '500px';
+                block.style.height = '560px';
+                text.textContent = "Collapse";
+                block.style.transition = "all 1s";
+                detail.style.display = 'block';
+              }
+              
+              else {
+                detail.style.display = 'none';
+                block.style.width = '200px';
+                block.style.height = '100px';
+                text.textContent = "Expand";
+                block.style.transition = "all 1s"
+              }
+            }
+
+        </script>
+      </tr>
+    </table>
+  </div>
+
+  <div class="projects">
+    
+      <h1 class="proj-title mont w600">Project Experience</h1>
+      <table class="proj-table">
+        <tr>
+          <td>
+            <div id="proj-item1" class="project-item mont">
+              <p class="proj-block acme">Quora Question Pairs</p>
+              <div id="proj-details1" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> NLTK, Spacy, Matplotlib, Linear Regression, SVM, Neural Networks, XGBoost</p>
+                <p><span class="w600">Techniques:</span> Data Augmentation, Data Visualization, Data Analysis, Predictive Modelling</p>
+                <p class="description"><span class="w600">Description:</span> The project revolves around addressing the challenge of information overload on the knowledge-sharing platform Quora. With the exponential growth of data, the goal is to identify and manage duplicate questions on Quora, enhancing the user experience by preventing the degradation of answer quality. The machine learning component focuses on pairing new questions with existing ones, employing features like basic statistics, text preprocessing, and advanced NLP techniques. The dataset, sourced from Kaggle, consists of labeled question pairs for training and evaluation. Baseline models, such as DummyClassifier, establish a benchmark for performance evaluation. Further analysis involves exploring data distribution, feature engineering, and implementing machine learning models like Logistic Regression, Support Vector Machine, XGBoost, and a Deep Neural Network using TensorFlow. The best-performing model achieves an accuracy of 79.29%, demonstrating its effectiveness in identifying duplicate question pairs on Quora.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/QuoraQuestionPairs"><img src="icons8-github-64.png"></a>
+                </div>
+
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item2" class="project-item mont">
+              <p class="proj-block acme">Blind Vision</p>
+              <div id="proj-details2" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Computer Vision, HTML, CSS, Javascript</p>
+                <p><span class="w600">Techniques:</span> API Integration, Virtual Assistance, Object Detection, SMS Communication, Speech-To-Text, Text-To-Speech</p>
+                <p class="description"><span class="w600">Description:</span> The Blind Vision project is a groundbreaking initiative aimed at enhancing the mobility of visually impaired individuals by serving as their virtual eyes. Utilizing a Raspberry Pi 3 with a Pi Cam module, complete with built-in wifi and Bluetooth capabilities, the system is seamlessly integrated into a walking stick for user convenience. Employing the YOLO Object detection system locally minimizes response time, allowing real-time detection of objects and distance approximation, communicated to the user via a connected headphone module. The project goes beyond basic functionality, introducing a beta version of a virtual assistant that provides time, weather updates, and the ability to send SOS messages through voice commands. To enhance caretaker involvement, a GPS module tracks the user's location, and all data is efficiently transmitted and displayed on a Heroku Web App for monitoring. This holistic approach empowers individuals with visual impairments and ensures a safer and more informed travel experience.</p>
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item3" class="project-item mont">
+              <p class="proj-block acme">Stock Trading Assist</p>
+              <div id="proj-details3" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Flutter, Python, AWS</p>
+                <p><span class="w600">Techniques:</span> Deep Learning, App Development, Cloud Technology</p>
+                <p class="description"><span class="w600">Description:</span> The "Stock Trading Assist" project addresses the challenge of predicting future stock prices with high accuracy. The system analyzes previous stock data to provide investors with insights for maximizing profits and minimizing losses. The project integrates machine learning techniques, including LSTM networks for stock price prediction, sentiment analysis of news headlines, and fundamental analysis using external APIs. The implementation involves AWS services like Sagemaker, Lambda, and CloudWatch, creating an end-to-end solution. The mobile application, built with React Native, serves as the frontend for users to access predictions conveniently. The project demonstrates impressive predictive accuracy and proposes future enhancements such as extending the model to more stock tickers, incorporating user preferences, and introducing real-time data visualization. The team has communicated their findings through an array of referenced papers, highlighting the academic significance of their work.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Basic-Stock-Prediction/blob/master/StockPrediction.ipynb"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item4" class="project-item mont">
+              <p class="proj-block acme"> MNIST Handwritten Digit Recognition</p>
+              <div id="proj-details4" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Tensorflow, Matplotlib</p>
+                <p><span class="w600">Techniques:</span> Neural Networks, Image Processing</p>
+                <p class="description"><span class="w600">Description:</span> The Handwritten Digit Recognition project employs the TensorFlow library to construct a powerful neural network. By preprocessing digit images into numpy arrays, the project transforms raw data into a format suitable for training the neural network. This preprocessing step plays a crucial role in enhancing the model's ability to recognize distinct patterns in handwritten digits. Additionally, the project goes beyond the training dataset by incorporating test images from the internet, ensuring the neural network's robustness and adaptability to a diverse range of handwritten digit inputs. The combination of TensorFlow, meticulous preprocessing, and diverse testing contributes to the project's goal of achieving accurate and versatile handwritten digit recognition.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Handwritten-Digit-Recognition"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item5" class="project-item mont">
+              <p class="proj-block acme">Face Recognition</p>
+              <div id="proj-details5" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, OpenCV</p>
+                <p><span class="w600">Techniques:</span> Image Processing, Face Recognition, Real-Time Face Recognition</p>
+                <p class="description"><span class="w600">Description:</span> The Face Recognition project is a sophisticated computer vision initiative designed to identify and outline faces within various contexts, including images, videos, or real-time scenarios. Powered by Python and utilizing the OpenCV computer vision library, the system is adept at employing the Cascade Classifier to robustly detect multiple faces within the captured media. Adding a layer of precision to the facial detection process, the project incorporates the LBPH (Local Binary Pattern Histogram) Face Recognizer. This specialized tool accurately identifies the regions of faces, providing detailed coordinates that specify the rectangular region of interest around each detected face. OpenCV's foundational functions are utilized to draw clear and distinct outlines around the detected faces, using the precise coordinates obtained from the LBPH Face Recognizer. In essence, this project showcases the seamless integration of Python, OpenCV, and advanced facial recognition techniques to deliver a robust and visually compelling solution.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Face-Recognition-using-OpenCV"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item6" class="project-item mont">
+              <p class="proj-block acme">Flower Classification (HackerEarth Challenge)</p>
+              <div id="proj-details6" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Keras, Pandas</p>
+                <p><span class="w600">Techniques:</span> Image Segregation, Image Preprocessing, Neural Network modeling, Model Training and Testing</p>
+                <p class="description"><span class="w600">Description:</span> Embarking on the Flower Classification challenge within HackerEarth's Deep Learning series, our approach involved meticulous steps to ensure accurate flower image classification. We began by organizing the dataset, segregating images into specific class folders. Converting these images into numpy arrays, we then implemented image data generators to augment the model's exposure to new variations at each training epoch. For the core of our model, we opted for the VGG16 neural network, known for its effectiveness. Our choice of the Adam optimizer and categorical cross-entropy loss function aimed at optimizing the model's performance. Through rigorous training and testing phases on the provided datasets, we aimed to create a robust solution for precise flower classification.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Flower-Classification"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item7" class="project-item mont">
+              <p class="proj-block acme">Emotion Detection using CNN</p>
+              <div id="proj-details7" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Keras, OpenCV</p>
+                <p><span class="w600">Techniques:</span> Image Processing, Face Recognition, Real-Time Face Recognition, Neural Network Modeling</p>
+                <p class="description"><span class="w600">Description:</span> In this Emotion Detection project, I leveraged Python, Keras, and OpenCV to develop a sophisticated system capable of accurately recognizing and categorizing human emotions in real-time. Utilizing deep learning techniques, particularly convolutional neural networks (CNNs) implemented with the Keras framework, the model was trained on diverse facial expression datasets to achieve robust performance. OpenCV played a crucial role in efficiently capturing and preprocessing facial images for input into the emotion classification model. The result is an end-to-end solution that not only detects emotions with high accuracy but also operates seamlessly in various real-world environments, showcasing the power of data science and deep learning in enhancing human-computer interaction and emotion-aware applications.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Emotion-Detection-using-CNN"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+          
+          <td>
+            <div id="proj-item8" class="project-item mont">
+              <p class="proj-block acme">Covid-19 Analytics</p>
+              <div id="proj-details8" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Pandas, Matplotlib, Plotly, Folium</p>
+                <p><span class="w600">Techniques:</span> Data Segration, Processing, Data Visualization</p>
+                <p class="description"><span class="w600">Description:</span> In response to the unprecedented challenges posed by the COVID-19 pandemic, I have developed a comprehensive COVID-19 analytics project focusing on Indian data using Python, leveraging visualization libraries such as Plotly and Matplotlib. This project aims to provide insightful and actionable information by analyzing and visualizing key COVID-19 metrics, including infection rates, mortality rates and trends. Through dynamic and interactive plots created with Plotly, alongside traditional visualizations using Matplotlib, the project offers a nuanced understanding of the pandemic's impact on different regions of India. The incorporation of data ensures the project remains a relevant and valuable resource for tracking and interpreting the evolving COVID-19 situation in the country. This analytics endeavor contributes to data-driven decision-making and enhances public understanding of the pandemic's trajectory in India.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/COVID-19-Analysis"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item9" class="project-item mont">
+              <p class="proj-block acme">Clustering Geographical Data</p>
+              <div id="proj-details9" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Scikit-learn</p>
+                <p><span class="w600">Techniques:</span> Machine Learning, Data Visualization</p>
+                <p class="description"><span class="w600">Description:</span> The "Clustering Geographical Data" project is a comprehensive exploration of taxi rank locations, employing Python and various libraries for data analysis and clustering. Beginning with data cleaning and visualization, the team utilizes K-Means, DBSCAN, and HDBSCAN clustering algorithms to intelligently identify key regions for establishing service stations. Silhouette scores serve as performance metrics, and the project concludes with a novel hybrid approach that combines K-Nearest Neighbors classification with HDBSCAN to address outliers and enhance clustering accuracy. Through a systematic and insightful process, the project not only offers valuable geospatial insights for taxi service optimization but also highlights the significance of handling outliers for robust clustering outcomes.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Clustering-Geological-Data"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item10" class="project-item mont">
+              <p class="proj-block acme">Flask Blog</p>
+              <div id="proj-details10" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Flask</p>
+                <p><span class="w600">Techniques:</span> Authentication, Authorization, Posts Handling</p>
+                <p class="description"><span class="w600">Description:</span> As a data scientist passionate about effective communication, I recently embarked on creating a dynamic blog using Python and Flask. This endeavor involved implementing robust user authentication features to ensure a secure and personalized experience. Leveraging Flask's versatility, I seamlessly integrated functionality for handling posts and meticulously structured routing for a user-friendly interface. The blog not only serves as a platform for sharing insights but also showcases the power of Python in web development. With a sleek design, intuitive navigation, and the ability for users to contribute through posts, the blog stands as a testament to the synergy between data science and web technologies, fostering a community for knowledge exchange and collaboration.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Flask-Blog"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item11" class="project-item mont">
+              <p class="proj-block acme">Attendance Management</p>
+              <div id="proj-details11" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Java, Javax</p>
+                <p><span class="w600">Techniques:</span> Data Visualization, Consolidating Data</p>
+                <p class="description"><span class="w600">Description:</span> The "Attendance Management" project is a Java-based application designed to streamline attendance tracking for online classes. Leveraging CSV files, the application efficiently records crucial data such as login duration, dates, and login/logout frequency. The tracked information is then presented in a user-friendly manner through a desktop application, utilizing Java UI libraries. Users can easily visualize attendance patterns through an intuitive bar graph and a detailed table, enhancing accessibility and facilitating data-driven decision-making for efficient class management. This project underscores the seamless integration of Java programming with graphical user interfaces, contributing to a comprehensive and user-centric attendance management solution.</p>
+                <div class="project-link">
+                  <a href="https://github.com/ujlagarg/CSE563-AttedanceManagement"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+
+          <td>
+            <div id="proj-item12" class="project-item mont">
+              <p class="proj-block acme">Python Voice Assistant</p>
+              <div id="proj-details12" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, APIs</p>
+                <p><span class="w600">Techniques:</span> API Integration, Speech Recognition, Speech-To-Text, Text-To-Speech, HTTP Requests, Google Calendar API</p>
+                <p class="description"><span class="w600">Description:</span> The Python Voice Assistant project is a sophisticated voice interaction system that relies on various Python libraries for seamless functionality. Leveraging the 'requests' library, the assistant effectively manages HTTP requests, demonstrating its capability to retrieve and handle data from external APIs. Additionally, the incorporation of the 'pytz' library enhances the project's proficiency in performing precise timezone calculations. This feature ensures accurate timestamp adjustments, especially crucial for applications like the Google Calendar integration, where scheduling events with correct timing is essential. The project demonstrates a sophisticated approach to audio handling, incorporating libraries like speech_recognition and pyttsx3 for accurate speech recognition and natural-sounding responses.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Python-Voice-Assistant"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+      
+          <td>
+            <div id="proj-item13" class="project-item mont">
+              <p class="proj-block acme">WhatsNext</p>
+              <div id="proj-details13" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, SQL, Kivy, Pandas</p>
+                <p><span class="w600">Techniques:</span> Speech Recognition, Speech-To-Text, Text-To-Speech, PDF Parsing, Desktop App Display</p>
+                <p class="description"><span class="w600">Description:</span> WhatsNext is a sophisticated assistant tool designed to streamline the daily routines of professors by providing personalized class schedules. Built on Python, utilizing essential libraries and APIs, the application takes a PDF of the professor's timetable, parses the data, and stores it in SQL tables. The virtual assistant then delivers timely reminders about upcoming classes, including details such as class timings and room numbers. Enabled with voice command functionality, it serves as an efficient desktop application, enhancing productivity for professors and offering potential extensions for student use.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/WhatsNext"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+          <td>
+            <div id="proj-item14" class="project-item mont">
+              <p class="proj-block acme">Stick Hero</p>
+              <div id="proj-details14" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Java</p>
+                <p><span class="w600">Techniques:</span> Event Listeners, Applets</p>
+                <p class="description"><span class="w600">Description:</span> The Stick Hero game is a Java-based rendition inspired by the mobile game Stick Hero. In this game, players navigate a character between platforms using an extending stick, controlled by touchscreen interactions. The character consistently moves to the stick's end, requiring players to adjust its length strategically to prevent the character from falling. The game employs Event Listeners for mouse clicks and records points for successfully traversed platforms. To introduce an element of unpredictability, upcoming platforms share the same height but possess random widths, adding a challenging dimension to the gameplay.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Stick-Hero"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item15" class="project-item mont">
+              <p class="proj-block acme">MarAts</p>
+              <div id="proj-details15" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> HTML, CSS, PHP, Javascript</p>
+                <p><span class="w600">Techniques:</span> Authentication, Authorization, Information Segregation and Selection</p>
+                <p class="description"><span class="w600">Description:</span> MarAts is an innovative marks-attendance web portal designed for professors and students, streamlining the attendance and marks recording process. Professors can efficiently record data for all subjects and students, while students gain secure access to view their individual marks and attendance. Developed using HTML, CSS, Javascript, and PHP, the website features robust signup/login authentication for both professors and students. The user-friendly interface presents information in a clear table format, complete with attendance and marks, organized by subjects for the current semester. The intuitive design includes a convenient drop-down menu for easy navigation.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Student-Faculty-Portal"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item16" class="project-item mont">
+              <p class="proj-block acme">Varsity Admission System</p>
+              <div id="proj-details16" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> C++</p>
+                <p><span class="w600">Techniques:</span> File I/O, Basic Information Processing</p>
+                <p class="description"><span class="w600">Description:</span> The Varsity Admission System streamlines the college admission process by capturing essential details from students, including their name, ranks in entrance exams, management seat eligibility, and stream preferences. The system efficiently processes this information, provided in CSV or tab-separated files, to determine each student's eligibility for specific streams based on their exam ranks and preferences. It simplifies and automates the admission workflow, ensuring a transparent and organized allocation of students to their preferred streams.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Varsity-Admission-Test-Result"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          <td>
+            <div id="proj-item17" class="project-item mont">
+              <p class="proj-block acme">Dining Philosophers</p>
+              <div id="proj-details17" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> C</p>
+                <p><span class="w600">Techniques:</span> Multi-threading</p>
+                <p class="description"><span class="w600">Description:</span> The Dining Philosophers Problem is a C-based project that uses the concept of multithreading. It simulates philosophers engaging in thinking and eating activities while preventing conflicts over shared forks. The implementation emphasizes the practical application of multithreading in resource-sharing scenarios, highlighting the importance of synchronization for correct and deadlock-free execution.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Dining-Philosophers-Problem---OS-AAT"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          
+          
+          
+          <td>
+            <div id="proj-item18" class="project-item mont">
+              <p class="proj-block acme">NewsFlix</p>
+              <div id="proj-details18" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Flutter</p>
+                <p><span class="w600">Techniques:</span> News API</p>
+                <p class="description"><span class="w600">Description:</span> NewsFlix introduces a cutting-edge mobile application designed to redefine how users interact with news. Leveraging the efficiency and flexibility of Flutter, the app ensures a responsive and visually appealing platform for news consumption. Through integration with the News API, the team has implemented a sophisticated categorization system, enabling users to effortlessly explore news based on their interests. The app's user interface is thoughtfully designed, featuring a fixed header with dynamic content, interactive category tiles, and an engaging body that presents headlines, authors, and optional images. Notably, the inclusion of a web view within the app adds a layer of convenience, allowing users to seamlessly transition from headlines to full articles without leaving the application. NewsFlix stands out as a testament to the team's dedication to creating a modern and user-centric news platform that seamlessly blends functionality with an engaging user experience.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/NewsFlix"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+          
+          
+
+        </tr>
+
+        <tr>
+          <td>
+            <button id="p-expand1" class="expand acme" onclick="expandProjectFunction('p-expand1','proj-item1','proj-details1');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand2" class="expand acme" onclick="expandProjectFunction('p-expand2','proj-item2','proj-details2');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand3" class="expand acme" onclick="expandProjectFunction('p-expand3','proj-item3','proj-details3');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand4" class="expand acme" onclick="expandProjectFunction('p-expand4','proj-item4','proj-details4');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand5" class="expand acme" onclick="expandProjectFunction('p-expand5','proj-item5','proj-details5');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand6" class="expand acme" onclick="expandProjectFunction('p-expand6','proj-item6','proj-details6');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand7" class="expand acme" onclick="expandProjectFunction('p-expand7','proj-item7','proj-details7');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand8" class="expand acme" onclick="expandProjectFunction('p-expand8','proj-item8','proj-details8');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand9" class="expand acme" onclick="expandProjectFunction('p-expand9','proj-item9','proj-details9');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand10" class="expand acme" onclick="expandProjectFunction('p-expand10','proj-item10','proj-details10');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand11" class="expand acme" onclick="expandProjectFunction('p-expand11','proj-item11','proj-details11');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand12" class="expand acme" onclick="expandProjectFunction('p-expand12','proj-item12','proj-details12');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand13" class="expand acme" onclick="expandProjectFunction('p-expand13','proj-item13','proj-details13');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand14" class="expand acme" onclick="expandProjectFunction('p-expand14','proj-item14','proj-details14');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand15" class="expand acme" onclick="expandProjectFunction('p-expand15','proj-item15','proj-details15');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand16" class="expand acme" onclick="expandProjectFunction('p-expand16','proj-item16','proj-details16');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand17" class="expand acme" onclick="expandProjectFunction('p-expand17','proj-item17','proj-details17');">Expand</button>
+          </td>
+
+          <td>
+            <button id="p-expand18" class="expand acme" onclick="expandProjectFunction('p-expand18','proj-item18','proj-details18');">Expand</button>
+          </td>
+
+
+
+
+          <script type="text/javascript">
+            function expandProjectFunction(varB,varI,varD) {
+              var btn = document.getElementById(varB);
+              var block = document.getElementById(varI);
+              var detail = document.getElementById(varD);
+
+              if(btn.innerHTML == "Expand"){
+                block.style.width = '500px';
+                block.style.height = '650px';
+                btn.textContent = "Collapse";
+                block.style.transition = "all 1s";
+                detail.style.display = 'block';
+              }
+              
+              else {
+                detail.style.display = 'none';
+                block.style.width = '200px';
+                block.style.height = '100px';
+                btn.textContent = "Expand";
+                block.style.transition = "all 1s"
+              }
+            }
+
+        </script>
+        </tr>
+      </table>
+    
+  </div>
+
+
+
+
+
+
+
+  <div class="certificates">
+    <h1 class="cert-title mont w600">Certifications</h1>
+    <table class="cert-table">
+      <tr>
+        
+        <td>
+          <div id="cert1" class="cert mont">
+              <p class="cert-block acme">Google Data Analytics Professional Certificate</p>
+              <div id="cert-details1" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Google</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">October 2023</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FYW4N6BTUUH3"><embed src="Google Data Analytics.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert2" class="cert mont">
+              <p class="cert-block acme">Google Advanced Data Analytics</p>
+              <div id="cert-details2" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Google</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">October 2023</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/DL5BSQHJT9X4 "><embed src="Google Advanced Data Analytics Specialization.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert3" class="cert mont">
+              <p class="cert-block acme">Data Visualization with Tableau</p>
+              <div id="cert-details3" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">University of California, Davis</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">September 2023</p>
+                    </td>
+                  </tr>
+                </table>
+                  
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/8JREUABP2SPX "><embed src="Data Visualization with Tableau Specialization.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert4" class="cert mont">
+              <p class="cert-block acme">Creating Business Value with Data and Looker</p>
+              <div id="cert-details4" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Google Cloud</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">August 2023</p>
+                    </td>
+                  </tr>
+                </table>
+                  
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/3PVX5B58RGKZ "><embed src="Creating Business Value with Data and Looker.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert5" class="cert mont">
+              <p class="cert-block acme">Deep Learning</p>
+              <div id="cert-details5" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">DeepLearning.AI</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">October 2019</p>
+                    </td>
+                  </tr>
+                </table>
+                  
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/NG9E8HBZK77S "><embed src="Deep Learning Specialization Certificate.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert6" class="cert mont">
+              <p class="cert-block acme">Introduction to Data Science</p>
+              <div id="cert-details6" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">IBM</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">March 2022</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/EQ32VETRM45X "><embed src="IBM Introduction to Data Science Specialization.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert7" class="cert mont">
+              <p class="cert-block acme">AWS Fundamentals</p>
+              <div id="cert-details7" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Amazon Web Services</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">May 2020</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/A42422KL9HKM "><embed src="AWS Fundmentals Specialization.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert8" class="cert mont">
+              <p class="cert-block acme">Python for Everybody</p>
+              <div id="cert-details8" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">University of Michigan</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">August 2020</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/specialization/certificate/XWKXW3T8HT67 "><embed src="Python for Everybody Specialization.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert9" class="cert mont">
+              <p class="cert-block acme">Introduction to Machine Learning in Production</p>
+              <div id="cert-details9" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">DeepLearning.AI</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">July 2022</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/certificate/U2WQQM6AS9ZG "><embed src="Introduction to ML into Production.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert10" class="cert mont">
+              <p class="cert-block acme">Clustering Geolocation Data Intelligently in Python</p>
+              <div id="cert-details10" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera Project Network</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">May 2020</p>
+                    </td>
+                  </tr>
+                </table>
+                <a href=" https://www.coursera.org/account/accomplishments/certificate/F58CKDXNFM5E "><embed src="Clustering Geolocation Data Intelligently in Python.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+        <td>
+          <div id="cert11" class="cert mont">
+              <p class="cert-block acme">Neural Network Visualizer Web App with Python</p>
+              <div id="cert-details11" class="cert-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <table class="inside-details">
+                  <tr>
+                    <td>
+                      <p class="mont w600">Provider:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera Project Network</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Issuing Organization:</p>
+                    </td>
+                    <td>
+                      <p class="mont">Coursera</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="mont w600">Date Issued:</p>
+                    </td>
+                    <td>
+                      <p class="mont">June 2020</p>
+                    </td>
+                  </tr>
+                </table>
+
+                <a href=" https://www.coursera.org/account/accomplishments/certificate/S55RQNLFCC5N "><embed src="Neural Network Visualizer Web App.pdf" width="300" height="232"  type="application/pdf" class="cert-img"></a>
+              </div>              
+            </div>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          
+          <button id="expand4" class="expand acme" onclick="expandCertFunction('expand4','cert1','cert-details1');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand5" class="expand acme" onclick="expandCertFunction('expand5','cert2','cert-details2');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand6" class="expand acme" onclick="expandCertFunction('expand6','cert3','cert-details3');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand7" class="expand acme" onclick="expandCertFunction('expand7','cert4','cert-details4');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand8" class="expand acme" onclick="expandCertFunction('expand8','cert5','cert-details5');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand9" class="expand acme" onclick="expandCertFunction('expand9','cert6','cert-details6');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand10" class="expand acme" onclick="expandCertFunction('expand10','cert7','cert-details7');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand11" class="expand acme" onclick="expandCertFunction('expand11','cert8','cert-details8');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand12" class="expand acme" onclick="expandCertFunction('expand12','cert9','cert-details9');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand13" class="expand acme" onclick="expandCertFunction('expand13','cert10','cert-details10');">Expand</button>
+
+        </td>
+
+        <td>
+          
+          <button id="expand14" class="expand acme" onclick="expandCertFunction('expand14','cert11','cert-details11');">Expand</button>
+
+        </td>
+
+        <script type="text/javascript">
+            function expandCertFunction(varB,varI,varD) {
+              var text = document.getElementById(varB);
+              var block = document.getElementById(varI);
+              var detail = document.getElementById(varD);
+
+              if(text.innerHTML == "Expand"){
+                block.style.width = '500px';
+                block.style.height = '525px';
+                text.textContent = "Collapse";
+                block.style.transition = "all 1s";
+                detail.style.display = 'block';
+              }
+              
+              else {
+                detail.style.display = 'none';
+                block.style.width = '200px';
+                block.style.height = '120px';
+                text.textContent = "Expand";
+                block.style.transition = "all 1s"
+              }
+            }
+
+        </script>
+      </tr>
+    </table>
+  </div>
+
+  <div class="contactme">
+    <h1 class="contact-title ctr w600 acme">Know Me More & Reach Out</h1>
+    <table class="contact-table">
+      <tr>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sagarrudagi"><img src="icons8-linkedin-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="mailto:sagarrudagi@gmail.com"><img src="icons8-gmail-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.github.com/SagarRudagi"><img src="icons8-github-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://public.tableau.com/app/profile/sagar.rudagi3488/vizzes"><img src="icons8-tableau-software-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://leetcode.com/CodingRook/"><img src="icons8-level-up-your-coding-skills-and-quickly-land-a-job-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.hackerrank.com/profile/sagarrudagi"><img src="icons8-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-48.png"></a>
+        </td>
+        <td>
+          <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/RudagiSagar"><img src="icons8-twitter-48.png"></a>
+        </td>
+      </tr>
+    </table>
+
+    <p class="footer"><span class="acme copyright">&copy Sagar Rudagi 2023</span><span class="acme copyright email"><span class="w800">Mail me : </span><a href="mailto:sagarrudagi@gmail">sagarrudagi@gmail.com</a></span></p>
+
+  </div>
+
+
+</body>
+</html>
