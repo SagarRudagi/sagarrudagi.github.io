@@ -43,7 +43,6 @@
     <h1 class="exp-title mont w600">Work Experience</h1>
     <table class="exp-table">
       <tr>
-
           <td>
             <div id="item1" class="item mont">
               <p class="exp-block acme">Data Insights and Analytics Engineer</p>
@@ -131,6 +130,97 @@
       </tr>
     </table>
   </div>
+
+#########################################################################
+
+
+  <div class="education">
+    <h1 class="edu-title mont w600">Education</h1>
+    <table class="edu-table">
+      <tr>
+          <td>
+            <div id="edu-item1" class="edu-item mont">
+              <p class="edu-block acme">Arizona State University (ASU)</p>
+              <div id="edu-details1" class="edu-details">
+                <p class="acme degree-name ctr">Masters in Computer Science</p>
+                <p class="ctr">Tempe, Arizona, USA</p>
+                <p class="ctr w600">Graduated</p>
+                <p class="ctr">Aug 2021 - May 2023</p>
+                <br>
+                <a onClick="openTab(this)" href="#" name="Unofficial Transcript Masters.pdf">
+                  <embed src="Unofficial Transcript Masters.pdf" width="300" height="232"  type="application/pdf" class="edu-cert-img">
+                </a>
+              </div>              
+            </div>
+          </td>
+
+          <td>
+            <div id="edu-item2" class="edu-item mont">
+              <p class="edu-block acme">BMS College of Engineering</p>
+              <div id="edu-details2" class="edu-details">
+                <p class="acme degree-name ctr">Bachelors of Engineering in Computer Science</p>
+                <p class="ctr">Bangalore, India</p>
+                <p class="ctr w600">Graduated</p>
+                <p class="ctr">Aug 2017 - May 2021</p>
+                <br>
+                <a onClick="openTab(this)" href="#" name="Undergrad Transcript.pdf">
+                  <embed src="Undergrad Transcript.pdf" width="300" height="232"  type="application/pdf" class="edu-cert-img">
+                </a>
+              </div>              
+            </div>
+          </td>
+
+      </tr>
+      <tr>
+
+        <td>
+          <button id="edu-expand1" class="expand acme" onclick="expandFunction('edu-expand1','edu-item1','edu-details1');">Expand</button>
+        </td>
+
+        <td>
+          <button id="edu-expand2" class="expand acme" onclick="expandFunction('edu-expand2','edu-item2','edu-details2');">Expand</button>
+        </td>
+
+
+        <script type="text/javascript">
+            function expandFunction(varB,varI,varD) {
+              var text = document.getElementById(varB);
+              var block = document.getElementById(varI);
+              var detail = document.getElementById(varD);
+
+              if(text.innerHTML == "Expand"){
+                block.style.width = '400px';
+                block.style.height = '500px';
+                text.textContent = "Collapse";
+                block.style.transition = "all 1s";
+                detail.style.display = 'block';
+              }
+              
+              else {
+                detail.style.display = 'none';
+                block.style.width = '200px';
+                block.style.height = '100px';
+                text.textContent = "Expand";
+                block.style.transition = "all 1s"
+              }
+            }
+
+            function openEduTab(th)
+            {
+                window.open(th.name,'_blank');
+            }
+
+        </script>
+      </tr>
+    </table>
+
+    
+  </div>
+
+
+
+
+
 
   <div class="projects">
     

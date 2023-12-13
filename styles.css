@@ -375,3 +375,46 @@ a{
 	text-align: right;
 	padding-right: 30px;
 }
+
+
+.edu-title{
+	padding-top: 150px;
+	text-align: center;
+	color: #00AFCD;
+	padding-bottom: 50px;
+}
+
+
+.edu-block{
+	color: black;
+	text-align: center;
+	font-weight: 1000;
+	font-size: 20px;
+}
+
+.edu-details{
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 11pt;
+}
+
+.edu-item{
+	overflow-x: auto;
+    margin-bottom: 10px;
+	background-color: #E6E6FA;
+	width: 200px;
+	height: 100px;
+	border-radius: 10%;
+	z-index: 0;
+}
+
+.degree-name{
+	font-size: 20px;
+}
+
+.edu-cert-img{
+	margin-left: 30px ;
+}
