@@ -103,11 +103,12 @@ h1.detail-name{
 
 
 .exp-table{
-	display: block;
+	display: grid;
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
+	overflow-x: auto;
 }
 
 td {
@@ -188,12 +189,13 @@ button.expand {
 }
 
 .cert-table{
-	display: block;
+	display: grid;
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 100px;
 	padding-bottom: 100px;
+	overflow-x: auto;
 }
 
 .cert-title{
@@ -288,11 +290,12 @@ a{
 }
 
 .proj-table{
-	display: block;
+	display: grid;
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
+	overflow-x: auto;
 }
 
 .proj-title{
@@ -421,10 +424,10 @@ a{
 }
 
 .edu-table{
-	display: block;
+	display: grid;
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
-	overflow: hidden;
+	overflow-x: auto;
 }
