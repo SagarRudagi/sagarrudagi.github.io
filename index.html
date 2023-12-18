@@ -110,8 +110,8 @@
               var detail = document.getElementById(varD);
 
               if(text.innerHTML == "Expand"){
-                block.style.width = '500px';
-                block.style.height = '560px';
+                block.style.width = '560px';
+                block.style.height = '525px';
                 text.textContent = "Collapse";
                 block.style.transition = "all 1s";
                 detail.style.display = 'block';
@@ -169,19 +169,19 @@
           </td>
 
       </tr>
-      <tr>
+      <tr class="buttons">
 
         <td>
-          <button id="edu-expand1" class="expand acme" onclick="expandFunction('edu-expand1','edu-item1','edu-details1');">Expand</button>
+          <button id="edu-expand1" class="expand acme" onclick="expandEduFunction('edu-expand1','edu-item1','edu-details1');">Expand</button>
         </td>
 
         <td>
-          <button id="edu-expand2" class="expand acme" onclick="expandFunction('edu-expand2','edu-item2','edu-details2');">Expand</button>
+          <button id="edu-expand2" class="expand acme" onclick="expandEduFunction('edu-expand2','edu-item2','edu-details2');">Expand</button>
         </td>
 
 
         <script type="text/javascript">
-            function expandFunction(varB,varI,varD) {
+            function expandEduFunction(varB,varI,varD) {
               var text = document.getElementById(varB);
               var block = document.getElementById(varI);
               var detail = document.getElementById(varD);
