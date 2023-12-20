@@ -105,10 +105,8 @@ h1.detail-name{
 .exp-table{
 	display: block;
 	border: 10px;
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 	overflow-x: auto;
-	overflow-y: hidden;
-
 }
 
 td {
@@ -194,8 +192,8 @@ button.expand {
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 100px;
-	padding-bottom: 100px;
+	margin-bottom: 150px;
+	padding-bottom: 50px;
 	overflow-x: auto;
 
 }
@@ -291,17 +289,13 @@ a{
 	font-size: 11pt;
 }
 
-/*.projects{
-	overflow: hidden;
-
-}*/
 
 .proj-table{
 	display: block;
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 	overflow-x: auto;
 }
 
@@ -435,7 +429,42 @@ a{
 	border: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 50px;
 	overflow-x: auto;
+	padding-bottom: 50px;
 }
 
+.cert-table::-webkit-scrollbar {
+  display: none;
+}
+
+.cert-table {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.proj-table::-webkit-scrollbar {
+  display: none;
+}
+
+.proj-table {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.edu-table::-webkit-scrollbar {
+  display: none;
+}
+
+.edu-table {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.exp-table::-webkit-scrollbar {
+  display: none;
+}
+
+.exp-table {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
