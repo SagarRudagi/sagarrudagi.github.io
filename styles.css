@@ -226,6 +226,7 @@ button.expand {
   	display: block;
   	align-items: center;
   	z-index: 1;
+	opacity: 1;
 }
 
 .expand:hover{
