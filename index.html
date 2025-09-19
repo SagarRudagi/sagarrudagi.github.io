@@ -323,6 +323,25 @@
       <table class="proj-table">
         <tr>
           <td>
+            <div id="proj-item19" class="project-item mont">
+              <p class="proj-block acme">Movie Recommender System</p>
+              <div id="proj-details19" class="proj-details">
+                <div id="divider" class="div-transparent div-arrow-down"></div>
+                <br>
+                <p><span class="w600">Tech Stack:</span> Python, Ollama, FAISS, Streamlit, NGROK</p>
+                <p><span class="w600">Techniques:</span> Ollama embeddings, FAISS vector stores, sub-second similarity search, UI app, Self-hosting</p>
+                <p class="description"><span class="w600">Description:</span> Built a full-stack movie recommender that preprocesses and indexes ~23k titles across five catalogs (Netflix, Amazon, Hulu, Disney, combined) into FAISS vector stores for sub-second similarity search. Designed a reusable backend pipeline generating L2-normalized embeddings via a local Ollama model, optimizing workflow to cut recommendation prep from minutes to seconds. Developed a Streamlit frontend with integrated similarity scoring, deployed locally and shared securely via ngrok, with automation, deployment, and debugging practices documented for reproducibility.</p>
+                <div class="project-link">
+                  <a href="https://github.com/SagarRudagi/Movie-Recommender-System"><img src="icons8-github-64.png"></a>
+                </div>
+
+              </div>
+            </div>  
+          </td>
+
+
+
+          <td>
             <div id="proj-item1" class="project-item mont">
               <p class="proj-block acme">Quora Question Pairs</p>
               <div id="proj-details1" class="proj-details">
@@ -637,6 +656,10 @@
         </tr>
 
         <tr>
+          <td>
+            <button id="p-expand19" class="expand acme" onclick="expandProjectFunction('p-expand19','proj-item19','proj-details19');">Expand</button>
+          </td>
+
           <td>
             <button id="p-expand1" class="expand acme" onclick="expandProjectFunction('p-expand1','proj-item1','proj-details1');">Expand</button>
           </td>
