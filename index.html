@@ -1,164 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800' rel='stylesheet'>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/site.css">
-  <title>Sagar Rudagi</title>
-  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sagar Rudagi — Data Scientist</title>
+  <meta name="description" content="Sagar Rudagi — Data Scientist. Portfolio showcasing projects, experience, skills and certifications.">
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap' rel='stylesheet'>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-
-  <header>
-      <h1 class="name acme">SAGAR RUDAGI</h1>    
-
-      <a onClick="openTab(this)" href="#" name="assets/pdfs/SagarRudagi_Resume.pdf"><button class="resume acme">Resume</button></a>
-
-      <script type="text/javascript">
-            function openTab(th)
-            {
-                window.open(th.name,'_blank');
-            }
-        </script>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00d9e8);display:flex;align-items:center;justify-content:center;color:#001827;font-weight:800">SR</div>
+        <div class="name">Sagar Rudagi</div>
+      </div>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certifications</a>
+        <a class="cta" data-resume="assets/pdfs/SagarRudagi_Resume.pdf">Resume</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="parent-container"> 
-    <div class="intro mont">
-      <h1 class="detail-name w600 acme">Sagar Rudagi</h1>
-      <h3 class="blue acme">Masters in Computer Science - Arizona State University</h4>
-      <h3>Data Scientist and Analyst.</h3>
-      <p align="center">
-        Data magician who turns numbers into insights and transforms chaos into clarity!
-      </p>
-      <img src="assets/images/dev-ed-wave.png" width="400" height="300"> 
-      <p class="dive acme">Let's dive deeper !!</p>
-      <img src="assets/icons/icons8-down-94.png">
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Hi — I'm <strong>Sagar Rudagi</strong></h1>
+        <p class="lead">Data Scientist & Engineer who builds production-ready analytics and ML systems — turning complex data into actionable insights.</p>
+        <div class="hero-actions">
+          <a class="cta" data-resume="assets/pdfs/SagarRudagi_Resume.pdf">Download Resume</a>
+          <a href="mailto:sagarrudagi@gmail.com" class="cta" style="background:#001827;color:var(--accent)">Email</a>
+        </div>
+        <div style="margin-top:8px;color:var(--muted);font-size:0.95rem">Masters in Computer Science — Arizona State University</div>
+      </div>
+      <div class="container hero-visual">
+        <img src="assets/images/dev-ed-wave.png" alt="wave illustration" style="max-width:320px;border-radius:12px;">
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="card-grid">
+
+          <article class="card project" id="proj-movie">
+            <h3>Movie Recommender System</h3>
+            <p class="muted">Python · Ollama · FAISS · Streamlit</p>
+            <p>Built a full-stack movie recommender that indexes ~23k titles into FAISS for sub-second similarity search and uses local Ollama embeddings for fast retrieval. Streamlit frontend with automated pipelines.</p>
+            <div class="tech-tags"><span class="tag">FAISS</span><span class="tag">Ollama</span><span class="tag">Streamlit</span></div>
+            <div class="links">
+              <a href="https://github.com/SagarRudagi/Movie-Recommender-System" target="_blank">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project" id="proj-quora">
+            <h3>Quora Question Pairs</h3>
+            <p class="muted">NLTK · Spacy · XGBoost · TensorFlow</p>
+            <p>Identified duplicate questions using feature engineering and multiple ML models; achieved strong accuracy through ensemble and deep learning experiments.</p>
+            <div class="tech-tags"><span class="tag">NLP</span><span class="tag">XGBoost</span></div>
+            <div class="links"><a href="https://github.com/SagarRudagi/QuoraQuestionPairs" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project" id="proj-blindvision">
+            <h3>Blind Vision</h3>
+            <p class="muted">Computer Vision · Raspberry Pi · YOLO</p>
+            <p>On-device object detection assisting visually impaired users with alerts, GPS, and a caretaker web app for monitoring.</p>
+            <div class="tech-tags"><span class="tag">YOLO</span><span class="tag">OpenCV</span></div>
+          </article>
+
+          <article class="card project" id="proj-stock">
+            <h3>Stock Trading Assist</h3>
+            <p class="muted">LSTM · AWS · Flutter</p>
+            <p>Predictive system using LSTMs and sentiment features, deployed with AWS services and a mobile frontend.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Basic-Stock-Prediction/blob/master/StockPrediction.ipynb" target="_blank">Notebook</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>MNIST Handwritten Digit Recognition</h3>
+            <p class="muted">TensorFlow · Image Processing</p>
+            <p>Neural network trained on preprocessed digit images with robust testing on external samples.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Handwritten-Digit-Recognition" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Face Recognition</h3>
+            <p class="muted">OpenCV · LBPH</p>
+            <p>Real-time face detection and recognition pipeline using OpenCV and LBPH-based matching.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Face-Recognition-using-OpenCV" target="_blank">GitHub</a></div>
+          </article>
+
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">View more projects below in the full Projects section.</p>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+
+          <div class="timeline-item card">
+            <div class="meta">May 2024 — Present<br>Irving, TX</div>
+            <div>
+              <h3>Software Engineer — Prodapt (Client: Verizon)</h3>
+              <p class="muted">Python · Jenkins · Grafana · SQL · Ansible</p>
+              <p>Designed automation and monitoring solutions, built Jenkins pipelines, and implemented robust alerting and data validation systems to improve operational resilience.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="meta">Oct 2023 — May 2024<br>Tempe, AZ</div>
+            <div>
+              <h3>SQL Developer — Local Grown Salads</h3>
+              <p class="muted">PostgreSQL · AWS · Odoo</p>
+              <p>Created PostgreSQL views on Odoo tables, mapped processes into dataflows, and enabled cross-team reporting and analytics.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item card">
+            <div class="meta">Jan 2021 — Jul 2021<br>Bangalore, India</div>
+            <div>
+              <h3>Data Insights & Analytics Engineer — TE Connectivity</h3>
+              <p class="muted">Redshift · Athena · DevOps</p>
+              <p>Led cloud migration validation to Redshift, automated pipelines, and developed data quality tooling for reliable ETL.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Frameworks & Tools</h2>
+        <div class="skills-grid">
+          <div class="skill"><img src="assets/skills/Python.png" alt="Python"><div>Python</div></div>
+          <div class="skill"><img src="assets/skills/Spark.png" alt="Spark"><div>Spark</div></div>
+          <div class="skill"><img src="assets/skills/MySQL.png" alt="MySQL"><div>MySQL</div></div>
+          <div class="skill"><img src="assets/skills/Tableau.png" alt="Tableau"><div>Tableau</div></div>
+          <div class="skill"><img src="assets/skills/GDS.png" alt="GDS"><div>Google Data Studio</div></div>
+          <div class="skill"><img src="assets/skills/Tensorflow.png" alt="TensorFlow"><div>TensorFlow</div></div>
+          <div class="skill"><img src="assets/skills/Airflow.png" alt="Airflow"><div>Airflow</div></div>
+          <div class="skill"><img src="assets/skills/AWS.png" alt="AWS"><div>AWS</div></div>
+          <div class="skill"><img src="assets/skills/GCP.png" alt="GCP"><div>GCP</div></div>
+          <div class="skill"><img src="assets/skills/Jira.png" alt="Jira"><div>Jira</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects-more" class="section">
+      <div class="container">
+        <h2 class="section-title">All Projects</h2>
+        <div class="card-grid">
+
+<!-- Re-created project list from previous site (kept descriptions) -->
+
+          <article class="card project">
+            <h3>Flower Classification (HackerEarth Challenge)</h3>
+            <p class="muted">Keras · Image Processing</p>
+            <p>Organized dataset, applied augmentation and VGG16 to classify flowers, trained and evaluated for robust performance.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Flower-Classification" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Emotion Detection using CNN</h3>
+            <p class="muted">Keras · OpenCV</p>
+            <p>Built CNN for real-time emotion recognition with OpenCV preprocessing and trained models for robust inference.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Emotion-Detection-using-CNN" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>COVID-19 Analytics</h3>
+            <p class="muted">Pandas · Plotly · Folium</p>
+            <p>Interactive visualizations and analysis of COVID-19 trends with geographic and time-series insights.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/COVID-19-Analysis" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Clustering Geographical Data</h3>
+            <p class="muted">Scikit-learn · HDBSCAN</p>
+            <p>Explored clustering algorithms and hybrid approaches to identify taxi rank regions and handle outliers.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Clustering-Geological-Data" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Flask Blog</h3>
+            <p class="muted">Flask · Python</p>
+            <p>Blog with authentication and post management built in Flask to share technical write-ups and tutorials.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Flask-Blog" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Attendance Management</h3>
+            <p class="muted">Java · CSV</p>
+            <p>Desktop app for tracking attendance with visualization and reporting features.</p>
+            <div class="links"><a href="https://github.com/ujlagarg/CSE563-AttedanceManagement" target="_blank">Repo</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Python Voice Assistant</h3>
+            <p class="muted">Speech Recognition · APIs</p>
+            <p>Assistant that integrates speech recognition, calendar APIs and timezone-aware scheduling.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Python-Voice-Assistant" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>WhatsNext</h3>
+            <p class="muted">Kivy · SQL</p>
+            <p>Parses professor timetables (PDF), stores schedule in SQL and provides voice reminders as a desktop assistant.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/WhatsNext" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Stick Hero</h3>
+            <p class="muted">Java</p>
+            <p>Game implementation inspired by Stick Hero using event listeners and applet-like UI.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Stick-Hero" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>MarAts</h3>
+            <p class="muted">PHP · JS · MySQL</p>
+            <p>Marks and attendance portal with authentication for professors and students.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Student-Faculty-Portal" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Varsity Admission System</h3>
+            <p class="muted">C++</p>
+            <p>Processes student data and preferences to determine admissions placement based on rank.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Varsity-Admission-Test-Result" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>Dining Philosophers</h3>
+            <p class="muted">C · Concurrency</p>
+            <p>Multithreading simulation demonstrating synchronization techniques for resource sharing.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/Dining-Philosophers-Problem---OS-AAT" target="_blank">GitHub</a></div>
+          </article>
+
+          <article class="card project">
+            <h3>NewsFlix</h3>
+            <p class="muted">Flutter · News API</p>
+            <p>Mobile app for categorized news discovery with web view integration for reading full articles.</p>
+            <div class="links"><a href="https://github.com/SagarRudagi/NewsFlix" target="_blank">GitHub</a></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Masters in Computer Science</h3>
+            <p class="muted">Arizona State University — Tempe, Arizona</p>
+            <p><a data-resume="assets/pdfs/Unofficial Transcript Masters.pdf">View transcript</a></p>
+          </div>
+          <div class="card">
+            <h3>Bachelor of Engineering — Computer Science</h3>
+            <p class="muted">BMS College of Engineering — Bangalore, India</p>
+            <p><a data-resume="assets/pdfs/Undergrad Transcript.pdf">View transcript</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="section">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Google Data Analytics</h3>
+            <p class="muted">Coursera</p>
+            <p><a href="assets/pdfs/Google Data Analytics.pdf" target="_blank">View Certificate</a></p>
+          </div>
+          <div class="card">
+            <h3>Google Advanced Data Analytics</h3>
+            <p class="muted">Coursera</p>
+            <p><a href="assets/pdfs/Google Advanced Data Analytics Specialization.pdf" target="_blank">View Certificate</a></p>
+          </div>
+          <div class="card">
+            <h3>Data Visualization with Tableau</h3>
+            <p class="muted">Coursera</p>
+            <p><a href="assets/pdfs/Data Visualization with Tableau Specialization.pdf" target="_blank">View Certificate</a></p>
+          </div>
+          <div class="card">
+            <h3>Creating Business Value with Data and Looker</h3>
+            <p class="muted">Coursera</p>
+            <p><a href="assets/pdfs/Creating Business Value with Data and Looker.pdf" target="_blank">View Certificate</a></p>
+          </div>
+          <div class="card">
+            <h3>Deep Learning</h3>
+            <p class="muted">DeepLearning.AI</p>
+            <p><a href="assets/pdfs/Deep Learning Specialization Certificate.pdf" target="_blank">View Certificate</a></p>
+          </div>
+          <div class="card">
+            <h3>Introduction to Data Science</h3>
+            <p class="muted">IBM / Coursera</p>
+            <p><a href="assets/pdfs/IBM Introduction to Data Science Specialization.pdf" target="_blank">View Certificate</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact & Links</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a href="https://www.linkedin.com/in/sagarrudagi" target="_blank"><img src="assets/icons/icons8-linkedin-48.png" alt="LinkedIn"></a>
+          <a href="mailto:sagarrudagi@gmail.com"><img src="assets/icons/icons8-gmail-48.png" alt="Email"></a>
+          <a href="https://github.com/SagarRudagi" target="_blank"><img src="assets/icons/icons8-github-48.png" alt="GitHub"></a>
+          <a href="https://public.tableau.com/app/profile/sagar.rudagi3488/vizzes" target="_blank"><img src="assets/icons/icons8-tableau-software-48.png" alt="Tableau"></a>
+          <a href="https://leetcode.com/CodingRook/" target="_blank"><img src="assets/icons/icons8-level-up-your-coding-skills-and-quickly-land-a-job-48.png" alt="LeetCode"></a>
+          <a href="https://www.hackerrank.com/profile/sagarrudagi" target="_blank"><img src="assets/icons/icons8-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-48.png" alt="HackerRank"></a>
+          <a href="https://twitter.com/RudagiSagar" target="_blank"><img src="assets/icons/icons8-twitter-48.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>&copy; Sagar Rudagi 2026</div>
+        <div style="color:var(--muted)">Mail: <a href="mailto:sagarrudagi@gmail.com">sagarrudagi@gmail.com</a></div>
+      </div>
     </div>
-  </div> 
+  </footer>
 
-  <section id="skills" class="skills">
-    <h1 class="exp-title mont w600">Frameworks & Tools</h1>
-    <table class="skills-table">
-      <tr>
-        <td>
-          <img src="assets/skills/Python.png" class="img-center">
-          <p class="mont white w600 ctr">Python</p>
-        </td>
-        <td>
-          <img src="assets/skills/Spark.png" class="img-center">
-          <p class="mont white w600 ctr">Apache Spark</p>
-        </td>
-        <td>
-          <img src="assets/skills/MySQL.png" class="img-center">
-          <p class="mont white w600 ctr">MySQL</p>
-        </td>
-        <td>
-          <img src="assets/skills/Tableau.png" class="img-center">
-          <p class="mont white w600 ctr">Tableau</p>
-        </td>
-        <td>
-          <img src="assets/skills/GDS.png" class="img-center">
-          <p class="mont white w600 ctr">Google Data Studio</p>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <img src="assets/skills/Tensorflow.png" class="img-center">
-          <p class="mont white w600 ctr">Tensorflow</p>
-        </td>
-        <td>
-          <img src="assets/skills/Airflow.png" class="img-center">
-          <p class="mont white w600 ctr">Apache Airflow</p>
-        </td>
-        <td>
-          <img src="assets/skills/AWS.png" class="img-center">
-          <p class="mont white w600 ctr">AWS</p>
-        </td>
-        <td>
-          <img src="assets/skills/GCP.png" class="img-center">
-          <p class="mont white w600 ctr">GCP</p>
-        </td>
-        <td>
-          <img src="assets/skills/Jira.png" class="img-center">
-          <p class="mont white w600 ctr">Jira</p>
-        </td>
-      </tr>
-          
-    </table>
-
-    <!-- <table class="other-skills">
-      <tr>
-        <th colspan="4" class="w700 acme ctr">Other Tools</th>
-      </tr>
-      <tr>
-        <td class="w500 acme ctr">
-          Github
-        </td>
-        <td class="w500 acme ctr">
-          Tableau
-        </td>
-        <td class="w500 acme ctr">
-          MySQL
-        </td>
-        <td class="w500 acme ctr">
-          Databricks
-        </td>
-      </tr>
-      
-    </table> -->
-
-  </section>
-
-  <section id="experience" class="experience">
-    <h1 class="exp-title mont w600">Work Experience</h1>
-    <table class="exp-table">
-      <tr>
-          <td>
-            <div id="item1" class="item mont">
-              <p class="exp-block acme">Software Engineer</p>
-              <div id="details1" class="details">
-                <p class="acme company-name">Prodapt - Client:<b>Verizon</b></p>
-                <p>(Technology and Consulting)</p>
-                <p>Irving, Texas</p>
-                <p>May 2024 - Present</p>
-                <br>
-                <p><span class="w600">Tech Stack:</span> Python, Jenkins, Grafana, SQL, Ansible, Shell Scripting, Selenium</p>
-                <p><span class="w600">Skills:</span> Data Validation, Data Mapping, Website and Process Automation, Alert Monitoring Scripting</p>
-                <p class="overview"><span class="w600">Overview:</span>Results-driven automation and data operations engineer with strong expertise in designing scalable solutions that enhance system efficiency, data accuracy, and operational resilience. Skilled in developing Jenkins pipelines, scripting with Shell and Selenium, and building robust monitoring frameworks using Prometheus and Grafana. Proficient in leveraging SQL for deep data analysis across multi-vendor systems, ensuring high-integrity KPI reporting and anomaly detection. Adept at requirement elicitation from cross-functional teams to drive automation, optimize workflows, and deliver end-to-end system improvements. Proven ability to resolve data inconsistencies, automate ticket-based processes, and engineer intelligent recovery and alerting mechanisms that support business continuity. Strong technical foundation paired with a problem-solving mindset and a continuous improvement focus.</p>
-              </div>              
-            </div>
-          </td>
-
-          <td>
-            <div id="item2" class="item mont">
-              <p class="exp-block acme">SQL Developer</p>
-              <div id="details2" class="details">
-                <p class="acme company-name">Local Grown Salads</p>
-                <p>(Farming)</p>
-                <p>Tempe, Arizona</p>
-                <p>Oct 2023 - May 2024</p>
-                <br>
-                <p><span class="w600">Tech Stack:</span> Python, PostgreSQL, AWS, Odoo, GitHub, Lucid Dataflow</p>
-                <p><span class="w600">Skills:</span> Database Schema Development, Data Mapping, Data Modeling, Data Table View Development</p>
-                <p class="overview"><span class="w600">Overview:</span> As a SQL Developer on the Farmer team, I bridged the gap between technical expertise and collaborative spirit to steer our transition to a data-driven workflow. I mapped our intricate processes into a comprehensive Lucid dataflow diagram, optimizing data access and processing with my SQL mastery. Anticipating data silos, I proactively built PostgreSQL views on Odoo tables, ensuring seamless data flow for all teams and laying the foundation for a robust data ecosystem. My work empowers the Farmer team to leverage data insights for smarter decision-making and efficient collaboration.</p>
-              </div>              
-            </div>
-          </td>
-
-          <td>
-            <div id="item3" class="item mont">
-              <p class="exp-block acme">Data Insights and Analytics Engineer</p>
-              <div id="details3" class="details">
-                <p class="acme company-name">TE Connectivity Services India</p>
-                <p>(Manufacturing)</p>
-                <p>Bangalore, India</p>
-                <p>Jan 2021 - July 2021</p>
-                <br>
+  <script src="js/main.js"></script>
+</body>
+</html>                <br>
                 <p><span class="w600">Tech Stack:</span> Python, MS-SQL, Excel, AWS - Redshift, Athena, S3, CodeBuild, CodePipeline, DevOps, Cassandra, Hive</p>
                 <p><span class="w600">Skills:</span> Data Analysis, Data Validation, Process Automation, Continuous Development, ETL</p>
                 <p class="overview"><span class="w600">Overview:</span> In my Cloud Migration Project, I ensured smooth data transition to AWS Redshift through thorough data validation. I developed code pipelines using DevOps and Jenkins to automate workflows, increasing project efficiency. Leveraging my expertise in data validation and automation, I played a pivotal role in successful data migration. This hands-on experience enhanced my skills in cloud-based data management, DevOps, and workflow automation.</p>

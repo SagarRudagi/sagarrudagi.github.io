@@ -1,0 +1,15 @@
+:root{
+  --bg:#071226;
+  --panel:#0b1a2a;
+  --muted:#9aa7b6;
+  --text:#e6eef6;
+  --accent:#00AFCD;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:Inter, Montserrat, sans-serif;background:var(--bg);color:var(--text)}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.hidden{display:none}
+button{font-family:inherit}

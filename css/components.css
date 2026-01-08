@@ -1,0 +1,13 @@
+/* Cards, project, timeline, footer styling */
+.card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.card h3{margin:0 0 8px 0}
+.tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tag{background:#0018271a;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px}
+.project .links{display:flex;gap:8px;margin-top:10px}
+.timeline{display:flex;flex-direction:column;gap:12px}
+.timeline-item{display:flex;gap:12px;align-items:flex-start}
+.timeline-item .meta{min-width:140px;color:var(--muted);font-size:13px}
+.footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:flex;align-items:center;justify-content:center;padding:20px;z-index:100}
+.modal .modal-card{max-width:900px;width:100%}
+.close-btn{background:transparent;border:0;color:var(--muted);font-weight:700}
