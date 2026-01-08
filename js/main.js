@@ -82,6 +82,16 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
     
     lastScrollTop = currentScroll;
   }, { passive: true });
+  
+  // Mouse move event listener - show navbar when mouse near top
+  document.addEventListener('mousemove', function(e) {
+    const currentScroll = window.scrollY || window.pageYOffset;
+    
+    // Show navbar if mouse is near the top of the page and scrolled past hero
+    if (currentScroll > heroHeight && e.clientY < 100) {
+      showNavbar();
+    }
+  }, { passive: true });
 })();
 
 
