@@ -57,18 +57,14 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   
   // Function to show navbar
   function showNavbar() {
-    if (isHidden) {
-      header.style.transform = 'translateY(0)';
-      isHidden = false;
-    }
+    header.classList.remove('hidden');
+    isHidden = false;
   }
   
   // Function to hide navbar
   function hideNavbar() {
-    if (!isHidden) {
-      header.style.transform = 'translateY(-100%)';
-      isHidden = true;
-    }
+    header.classList.add('hidden');
+    isHidden = true;
   }
   
   // Scroll event listener

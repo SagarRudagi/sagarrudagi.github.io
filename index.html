@@ -20,14 +20,22 @@
   <style>
     /* Sticky navbar improvements */
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       backdrop-filter: blur(8px);
       box-shadow: 0 2px 12px rgba(0, 255, 136, 0.15);
       animation: slideDown 0.3s ease-out;
-      transform: translateY(0);
-      transition: transform 0.3s ease-out;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    }
+
+    .site-header.hidden {
+      opacity: 0;
+      visibility: hidden;
     }
 
     @keyframes slideDown {
