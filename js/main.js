@@ -74,3 +74,89 @@ document.addEventListener('click', function(e){
   }
 });
 
+// Project card click handlers
+function openProjectModal(projectCard) {
+  const modal = document.getElementById('projectModal');
+  const title = projectCard.getAttribute('data-title');
+  const description = projectCard.getAttribute('data-description');
+  const tech = projectCard.getAttribute('data-tech');
+  const links = JSON.parse(projectCard.getAttribute('data-links') || '[]');
+  
+  // Populate modal
+  document.getElementById('projectModalTitle').textContent = title;
+  document.querySelector('.project-modal-content .full-description').textContent = description;
+  
+  // Populate tech stack
+  const techTagsContainer = document.getElementById('modalTechTags');
+  techTagsContainer.innerHTML = '';
+  tech.split(',').forEach(t => {
+    const tag = document.createElement('span');
+    tag.className = 'tag';
+    tag.textContent = t.trim();
+    techTagsContainer.appendChild(tag);
+  });
+  
+  // Populate links
+  const linksContainer = document.getElementById('modalLinks');
+  linksContainer.innerHTML = '';
+  links.forEach(link => {
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = link.text;
+    linksContainer.appendChild(a);
+  });
+  
+  // Show modal
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  currentModal = modal;
+  
+  // Set up close button focus
+  const closeBtn = modal.querySelector('.project-modal-close');
+  if(closeBtn) closeBtn.focus();
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById('projectModal');
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  currentModal = null;
+}
+
+// Add click listeners to all project cards
+document.querySelectorAll('.card.project').forEach(card => {
+  card.addEventListener('click', function(e) {
+    // Don't open modal if clicking on a link inside the card
+    if(e.target.tagName === 'A' || e.target.closest('a')) return;
+    openProjectModal(this);
+  });
+  // Make keyboard accessible
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', function(e) {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openProjectModal(this);
+    }
+  });
+});
+
+// Close project modal on backdrop click
+const projectModal = document.getElementById('projectModal');
+if(projectModal) {
+  projectModal.addEventListener('click', function(e) {
+    if(e.target === this) closeProjectModal();
+  });
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && projectModal.classList.contains('active')) {
+      closeProjectModal();
+    }
+  });
+}
+
+
