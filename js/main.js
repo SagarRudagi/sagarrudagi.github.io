@@ -182,13 +182,17 @@ document.querySelectorAll('#certificates .card').forEach(card => {
 });
 
 function expandCertificate(certCard, pdfUrl) {
+  // Get certificate name for image lookup
+  const certName = certCard.querySelector('h3').textContent;
+  const imageUrl = 'assets/certificates/' + certName.toLowerCase().replace(/\s+/g, '-') + '.png';
+  
   // Create expanded overlay
   const overlay = document.createElement('div');
   overlay.className = 'cert-overlay';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:102;padding:16px;';
   
   const container = document.createElement('div');
-  container.style.cssText = 'width:100%;height:100%;max-width:1000px;background:#fff;border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);position:relative;';
+  container.style.cssText = 'width:100%;height:100%;max-width:1200px;background:#fff;border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);position:relative;';
   
   const header = document.createElement('div');
   header.style.cssText = 'padding:12px 16px;border-bottom:1px solid #e0e0e0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;background:#fff;z-index:10;';
@@ -196,7 +200,7 @@ function expandCertificate(certCard, pdfUrl) {
   const titleDiv = document.createElement('div');
   titleDiv.style.cssText = 'display:flex;gap:12px;align-items:center;flex:1;';
   titleDiv.innerHTML = '<h2 style="margin:0;color:#111;font-size:1.2rem;overflow:hidden;text-overflow:ellipsis;"></h2>';
-  titleDiv.querySelector('h2').textContent = certCard.querySelector('h3').textContent;
+  titleDiv.querySelector('h2').textContent = certName;
   header.appendChild(titleDiv);
   
   const btnContainer = document.createElement('div');
@@ -204,10 +208,10 @@ function expandCertificate(certCard, pdfUrl) {
   
   const downloadBtn = document.createElement('a');
   downloadBtn.href = pdfUrl;
-  downloadBtn.download = certCard.querySelector('h3').textContent + '.pdf';
-  downloadBtn.innerHTML = '⬇';
-  downloadBtn.title = 'Download certificate';
-  downloadBtn.style.cssText = 'background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);color:#00FF88;padding:8px 10px;border-radius:6px;text-decoration:none;font-weight:500;cursor:pointer;transition:all 0.2s ease;font-size:1rem;display:flex;align-items:center;justify-content:center;';
+  downloadBtn.download = certName + '.pdf';
+  downloadBtn.innerHTML = '⬇ Download PDF';
+  downloadBtn.title = 'Download certificate as PDF';
+  downloadBtn.style.cssText = 'background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);color:#00FF88;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:500;cursor:pointer;transition:all 0.2s ease;font-size:0.9rem;display:flex;align-items:center;gap:4px;';
   downloadBtn.onmouseover = () => { downloadBtn.style.background = 'rgba(0,255,136,0.2)'; downloadBtn.style.borderColor = 'rgba(0,255,136,0.6)'; };
   downloadBtn.onmouseout = () => { downloadBtn.style.background = 'rgba(0,255,136,0.1)'; downloadBtn.style.borderColor = 'rgba(0,255,136,0.3)'; };
   btnContainer.appendChild(downloadBtn);
@@ -222,17 +226,21 @@ function expandCertificate(certCard, pdfUrl) {
   btnContainer.appendChild(closeBtn);
   header.appendChild(btnContainer);
   
-  const pdfContainer = document.createElement('div');
-  pdfContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#f9f9f9;';
+  const contentContainer = document.createElement('div');
+  contentContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#f9f9f9;padding:20px;';
   
-  const pdfObject = document.createElement('object');
-  pdfObject.data = pdfUrl;
-  pdfObject.type = 'application/pdf';
-  pdfObject.style.cssText = 'width:100%;height:100%;border:none;';
-  pdfContainer.appendChild(pdfObject);
+  const img = document.createElement('img');
+  img.src = imageUrl;
+  img.alt = certName;
+  img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);';
+  img.onerror = () => {
+    // Fallback if image not found
+    contentContainer.innerHTML = '<div style="text-align:center;color:#999;"><p style="margin:0;font-size:1.1rem;">Certificate image not available</p><p style="margin:8px 0 0 0;font-size:0.9rem;">Please download the PDF to view the certificate</p></div>';
+  };
+  contentContainer.appendChild(img);
   
   container.appendChild(header);
-  container.appendChild(pdfContainer);
+  container.appendChild(contentContainer);
   overlay.appendChild(container);
   document.body.appendChild(overlay);
   document.body.style.overflow = 'hidden';
