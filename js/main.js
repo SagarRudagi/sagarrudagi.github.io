@@ -44,6 +44,34 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   })
 });
 
+// Smart navbar hide/show on scroll
+let lastScrollTop = 0;
+const header = document.querySelector('.site-header');
+const scrollThreshold = 5; // pixels to scroll before triggering hide/show
+
+window.addEventListener('scroll', function() {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Only trigger hide/show after scrolling past hero section (around 600px)
+  if (currentScroll > 600) {
+    // Scrolling down - hide navbar
+    if (currentScroll > lastScrollTop + scrollThreshold) {
+      header.style.transform = 'translateY(-100%)';
+      header.style.transition = 'transform 0.3s ease-out';
+    }
+    // Scrolling up - show navbar
+    else if (currentScroll < lastScrollTop - scrollThreshold) {
+      header.style.transform = 'translateY(0)';
+      header.style.transition = 'transform 0.3s ease-out';
+    }
+  } else {
+    // Near top - always show navbar
+    header.style.transform = 'translateY(0)';
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}, false);
+
 // keyboard close modal
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape' && currentModal){
