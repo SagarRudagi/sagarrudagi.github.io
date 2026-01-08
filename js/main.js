@@ -225,11 +225,11 @@ function expandCertificate(certCard, pdfUrl) {
   const pdfContainer = document.createElement('div');
   pdfContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#f9f9f9;';
   
-  const iframe = document.createElement('iframe');
-  iframe.src = pdfUrl + '#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
-  iframe.style.cssText = 'width:100%;height:100%;border:none;';
-  iframe.sandbox.add('allow-same-origin');
-  pdfContainer.appendChild(iframe);
+  const pdfObject = document.createElement('object');
+  pdfObject.data = pdfUrl;
+  pdfObject.type = 'application/pdf';
+  pdfObject.style.cssText = 'width:100%;height:100%;border:none;';
+  pdfContainer.appendChild(pdfObject);
   
   container.appendChild(header);
   container.appendChild(pdfContainer);
