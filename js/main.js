@@ -44,40 +44,22 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   })
 });
 
-// Smart navbar hide/show on scroll with inactivity timeout
+// Simple navbar hide/show on scroll
 (function() {
   const header = document.querySelector('.site-header');
   if (!header) return;
   
   let lastScrollTop = 0;
-  let inactivityTimeout;
-  let isHidden = false;
-  const scrollThreshold = 10;
   const heroHeight = 600;
-  const inactivityDelay = 1000; // 1 second
   
   // Function to show navbar
   function showNavbar() {
     header.classList.remove('hidden');
-    isHidden = false;
-    resetInactivityTimer();
   }
   
   // Function to hide navbar
   function hideNavbar() {
     header.classList.add('hidden');
-    isHidden = true;
-  }
-  
-  // Function to reset inactivity timer
-  function resetInactivityTimer() {
-    clearTimeout(inactivityTimeout);
-    
-    // Only set inactivity timeout if scrolled past hero
-    const currentScroll = window.scrollY || window.pageYOffset;
-    if (currentScroll > heroHeight) {
-      inactivityTimeout = setTimeout(hideNavbar, inactivityDelay);
-    }
   }
   
   // Scroll event listener
@@ -87,31 +69,18 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
     // Always show navbar in hero section
     if (currentScroll < heroHeight) {
       showNavbar();
-      clearTimeout(inactivityTimeout);
       lastScrollTop = currentScroll;
       return;
     }
     
     // Past hero section - hide on scroll down, show on scroll up
-    if (currentScroll > lastScrollTop + scrollThreshold) {
-      // Scrolling down
+    if (currentScroll > lastScrollTop) {
       hideNavbar();
-    } else if (currentScroll < lastScrollTop - scrollThreshold) {
-      // Scrolling up
+    } else {
       showNavbar();
     }
     
     lastScrollTop = currentScroll;
-  }, { passive: true });
-  
-  // Mouse move event listener - only show if near top of page
-  document.addEventListener('mousemove', function(e) {
-    const currentScroll = window.scrollY || window.pageYOffset;
-    
-    // Only show if mouse is very close to top of screen (within 80px)
-    if (e.clientY < 80) {
-      showNavbar();
-    }
   }, { passive: true });
 })();
 
