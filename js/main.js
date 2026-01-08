@@ -188,30 +188,45 @@ function expandCertificate(certCard, pdfUrl) {
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:102;padding:16px;';
   
   const container = document.createElement('div');
-  container.style.cssText = 'width:100%;height:100%;max-width:1000px;background:var(--panel);border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);';
+  container.style.cssText = 'width:100%;height:100%;max-width:1000px;background:rgba(255,255,255,0.98);border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);';
   
   const header = document.createElement('div');
-  header.style.cssText = 'padding:16px 20px;border-bottom:1px solid rgba(0,255,136,0.1);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;';
-  header.innerHTML = '<h2 style="margin:0;color:#00FF88;font-size:1.3rem;overflow:hidden;text-overflow:ellipsis">' + certCard.querySelector('h3').textContent + '</h2>';
+  header.style.cssText = 'padding:12px 16px;border-bottom:1px solid rgba(0,255,136,0.1);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;background:#fff;';
+  header.innerHTML = '<h2 style="margin:0;color:#111;font-size:1.2rem;overflow:hidden;text-overflow:ellipsis;flex:1;"></h2>';
+  header.querySelector('h2').textContent = certCard.querySelector('h3').textContent;
+  
+  const btnContainer = document.createElement('div');
+  btnContainer.style.cssText = 'display:flex;gap:8px;flex-shrink:0;';
+  
+  const downloadBtn = document.createElement('a');
+  downloadBtn.href = pdfUrl;
+  downloadBtn.download = certCard.querySelector('h3').textContent + '.pdf';
+  downloadBtn.innerHTML = '⬇ Download';
+  downloadBtn.style.cssText = 'background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.3);color:#00FF88;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:500;cursor:pointer;transition:all 0.2s ease;font-size:0.9rem;white-space:nowrap;';
+  downloadBtn.onmouseover = () => { downloadBtn.style.background = 'rgba(0,255,136,0.2)'; downloadBtn.style.borderColor = 'rgba(0,255,136,0.6)'; };
+  downloadBtn.onmouseout = () => { downloadBtn.style.background = 'rgba(0,255,136,0.1)'; downloadBtn.style.borderColor = 'rgba(0,255,136,0.3)'; };
+  btnContainer.appendChild(downloadBtn);
   
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '✕';
-  closeBtn.style.cssText = 'background:transparent;border:0;color:var(--muted);font-size:1.8rem;cursor:pointer;padding:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease;flex-shrink:0;';
-  closeBtn.onmouseover = () => { closeBtn.style.color = '#00FF88'; closeBtn.style.background = 'rgba(0,255,136,0.1)'; };
-  closeBtn.onmouseout = () => { closeBtn.style.color = 'var(--muted)'; closeBtn.style.background = 'transparent'; };
+  closeBtn.style.cssText = 'background:transparent;border:0;color:#666;font-size:1.6rem;cursor:pointer;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:all 0.2s ease;';
+  closeBtn.onmouseover = () => { closeBtn.style.background = 'rgba(0,0,0,0.1)'; closeBtn.style.color = '#000'; };
+  closeBtn.onmouseout = () => { closeBtn.style.background = 'transparent'; closeBtn.style.color = '#666'; };
   closeBtn.onclick = () => closeCertificateOverlay();
-  header.appendChild(closeBtn);
+  btnContainer.appendChild(closeBtn);
+  header.appendChild(btnContainer);
   
-  const pdfViewer = document.createElement('div');
-  pdfViewer.style.cssText = 'flex:1;display:flex;align-items:center;justify-content:center;padding:12px;overflow:auto;background:rgba(0,0,0,0.3);';
+  const pdfContainer = document.createElement('div');
+  pdfContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#f5f5f5;padding:8px;';
   
-  const iframe = document.createElement('iframe');
-  iframe.src = pdfUrl + '#zoom=page-fit&view=fit';
-  iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:8px;background:#fff;';
-  pdfViewer.appendChild(iframe);
+  const embed = document.createElement('embed');
+  embed.src = pdfUrl;
+  embed.type = 'application/pdf';
+  embed.style.cssText = 'width:100%;height:100%;border:none;border-radius:8px;';
+  pdfContainer.appendChild(embed);
   
   container.appendChild(header);
-  container.appendChild(pdfViewer);
+  container.appendChild(pdfContainer);
   overlay.appendChild(container);
   document.body.appendChild(overlay);
   document.body.style.overflow = 'hidden';
