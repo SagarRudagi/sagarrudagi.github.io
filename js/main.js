@@ -44,15 +44,14 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   })
 });
 
-// Smart navbar hide/show on scroll with mouse tracking and inactivity timeout
+// Smart navbar hide/show on scroll with inactivity timeout
 (function() {
   const header = document.querySelector('.site-header');
   if (!header) return;
   
   let lastScrollTop = 0;
-  let lastMouseY = 0;
-  let isHidden = false;
   let inactivityTimeout;
+  let isHidden = false;
   const scrollThreshold = 10;
   const heroHeight = 600;
   const inactivityDelay = 1000; // 1 second
@@ -105,20 +104,14 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
     lastScrollTop = currentScroll;
   }, { passive: true });
   
-  // Mouse move event listener - show on top hover or upward movement
+  // Mouse move event listener - only show if near top of page
   document.addEventListener('mousemove', function(e) {
     const currentScroll = window.scrollY || window.pageYOffset;
     
-    // Show if mouse near top of screen
-    if (e.clientY < 100) {
+    // Only show if mouse is very close to top of screen (within 80px)
+    if (e.clientY < 80) {
       showNavbar();
     }
-    // Show if mouse moving upward while scrolled down
-    else if (currentScroll > heroHeight && e.clientY < lastMouseY - 5) {
-      showNavbar();
-    }
-    
-    lastMouseY = e.clientY;
   }, { passive: true });
 })();
 
