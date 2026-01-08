@@ -12,6 +12,10 @@
 .project .links{display:flex;gap:12px;margin-top:12px}
 .project .links a{display:inline-block;padding:6px 12px;background:rgba(0,255,136,0.08);border-radius:6px;font-size:0.9rem;transition:all 0.2s ease}
 .project .links a:hover{background:rgba(0,255,136,0.15)}
+#certificates .card{cursor:pointer;position:relative;transition:all 0.3s ease}
+#certificates .card:hover{background:rgba(0,255,136,0.03);border-color:rgba(0,255,136,0.3)}
+#certificates .card::after{content:'📄 Click to expand';position:absolute;bottom:16px;right:16px;color:#00FF88;font-size:0.8rem;opacity:0;transition:opacity 0.3s ease;pointer-events:none}
+#certificates .card:hover::after{opacity:1}
 .timeline{display:flex;flex-direction:column;gap:16px}
 .timeline-item{display:flex;gap:16px;align-items:flex-start}
 .timeline-item .meta{min-width:140px;color:var(--muted);font-size:13px;flex-shrink:0}
