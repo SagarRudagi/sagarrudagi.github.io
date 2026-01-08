@@ -17,9 +17,11 @@ header.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(1
 .card-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:18px}
 .section{padding:40px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
 .section-title{color:var(--accent);margin:0 0 24px 0;font-size:1.5rem;font-weight:700}
-.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.skill{background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));padding:16px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.02);transition:all 0.2s ease;cursor:default}
-.skill:hover{background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));transform:translateY(-2px)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skill{background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));padding:20px 16px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s ease;cursor:default;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:140px}
+.skill img{width:56px;height:56px;object-fit:contain;object-position:center}
+.skill div{font-size:0.95rem;font-weight:500;color:var(--text);letter-spacing:0.3px}
+.skill:hover{background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));transform:translateY(-3px);box-shadow:0 4px 16px rgba(0,175,205,0.1)}
 @media(min-width:760px){
   .hero{grid-template-columns:1fr 360px}
   .card-grid{grid-template-columns:repeat(2,1fr)}
