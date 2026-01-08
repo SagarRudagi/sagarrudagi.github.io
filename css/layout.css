@@ -5,7 +5,9 @@ header.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(1
 .site-nav{display:flex;gap:16px;align-items:center}
 .site-nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
 .site-nav a:hover{color:var(--text);background:var(--glass)}
-.cta{background:linear-gradient(90deg,var(--accent),#00d9e8);color:#001827;padding:10px 14px;border-radius:10px;font-weight:700}
+.cta{background:linear-gradient(90deg,var(--accent),#00d9e8);color:#001827;padding:10px 14px;border-radius:10px;font-weight:700;border:0;transition:all 0.2s ease;box-shadow:0 4px 12px rgba(0,175,205,0.25)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,175,205,0.35)}
+.cta:focus{outline:2px solid #001827;outline-offset:2px}
 .hero{padding:48px 0;display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
 .hero-inner{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
 .hero h1{margin:0;font-size:2rem}
@@ -13,10 +15,11 @@ header.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(1
 .hero .hero-actions{display:flex;gap:12px}
 .hero-visual{display:flex;justify-content:center}
 .card-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:18px}
-.section{padding:32px 0}
-.section-title{color:var(--accent);margin-bottom:12px}
+.section{padding:40px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.section-title{color:var(--accent);margin:0 0 24px 0;font-size:1.5rem;font-weight:700}
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.skill{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;text-align:center}
+.skill{background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));padding:16px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.02);transition:all 0.2s ease;cursor:default}
+.skill:hover{background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));transform:translateY(-2px)}
 @media(min-width:760px){
   .hero{grid-template-columns:1fr 360px}
   .card-grid{grid-template-columns:repeat(2,1fr)}

@@ -1,30 +1,37 @@
+// Focus trap utility for modals
+function createFocusTrap(element) {
+  const focusableEls = element.querySelectorAll('button, [href], input, [tabindex]');
+  const firstEl = focusableEls[0];
+  const lastEl = focusableEls[focusableEls.length - 1];
+  return { firstEl, lastEl };
+}
+
+function focusTrap(e, { firstEl, lastEl }) {
+  if (e.key !== 'Tab') return;
+  if (e.shiftKey) {
+    if (document.activeElement === firstEl) {
+      lastEl.focus();
+      e.preventDefault();
+    }
+  } else {
+    if (document.activeElement === lastEl) {
+      firstEl.focus();
+      e.preventDefault();
+    }
+  }
+}
+
+let currentModal = null;
+let trapHandler = null;
+
 document.addEventListener('click', function(e){
   // open resume links
   var t = e.target;
   if(t.matches('[data-resume]') || (t.closest && t.closest('[data-resume]'))){
     var el = t.closest('[data-resume]') || t;
     var href = el.getAttribute('data-resume');
-    window.open(href,'_blank');
-  }
-  // open project modal
-  if(t.matches('[data-project]')){
-    var id = t.getAttribute('data-project');
-    var modal = document.getElementById('modal-'+id);
-    if(modal) modal.classList.remove('hidden');
-    document.body.style.overflow='hidden';
-  }
-  if(t.matches('.modal') || t.matches('.close-btn')){
-    var modal = t.closest('.modal') || t;
-    if(modal && modal.classList) modal.classList.add('hidden');
-    document.body.style.overflow='';
-  }
-});
-
-// keyboard close
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape'){
-    document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));
-    document.body.style.overflow='';
+    if(href) window.open(href,'_blank');
+    e.preventDefault();
   }
 });
 
@@ -36,3 +43,34 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
     if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
   })
 });
+
+// keyboard close modal
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && currentModal){
+    closeModal(currentModal);
+  }
+});
+
+function closeModal(modal) {
+  if(!modal) return;
+  modal.classList.remove('active');
+  document.body.style.overflow='';
+  currentModal = null;
+  if(trapHandler) document.removeEventListener('keydown', trapHandler);
+}
+
+// delegated modal click handler
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.close-btn');
+  if(closeBtn) {
+    var modal = closeBtn.closest('.modal');
+    if(modal) closeModal(modal);
+    return;
+  }
+  
+  // close if click on modal backdrop (not content)
+  if(e.target.classList && e.target.classList.contains('modal')) {
+    closeModal(e.target);
+  }
+});
+
