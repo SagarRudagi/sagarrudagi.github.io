@@ -44,7 +44,7 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   })
 });
 
-// Smart navbar hide/show on scroll with mouse tracking
+// Smart navbar hide/show on scroll with mouse tracking and inactivity timeout
 (function() {
   const header = document.querySelector('.site-header');
   if (!header) return;
@@ -52,19 +52,33 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   let lastScrollTop = 0;
   let lastMouseY = 0;
   let isHidden = false;
+  let inactivityTimeout;
   const scrollThreshold = 10;
   const heroHeight = 600;
+  const inactivityDelay = 1000; // 1 second
   
   // Function to show navbar
   function showNavbar() {
     header.classList.remove('hidden');
     isHidden = false;
+    resetInactivityTimer();
   }
   
   // Function to hide navbar
   function hideNavbar() {
     header.classList.add('hidden');
     isHidden = true;
+  }
+  
+  // Function to reset inactivity timer
+  function resetInactivityTimer() {
+    clearTimeout(inactivityTimeout);
+    
+    // Only set inactivity timeout if scrolled past hero
+    const currentScroll = window.scrollY || window.pageYOffset;
+    if (currentScroll > heroHeight) {
+      inactivityTimeout = setTimeout(hideNavbar, inactivityDelay);
+    }
   }
   
   // Scroll event listener
@@ -74,6 +88,7 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
     // Always show navbar in hero section
     if (currentScroll < heroHeight) {
       showNavbar();
+      clearTimeout(inactivityTimeout);
       lastScrollTop = currentScroll;
       return;
     }
