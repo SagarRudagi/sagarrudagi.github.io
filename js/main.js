@@ -185,29 +185,29 @@ function expandCertificate(certCard, pdfUrl) {
   // Create expanded overlay
   const overlay = document.createElement('div');
   overlay.className = 'cert-overlay';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:102;padding:20px;';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:102;padding:16px;';
   
   const container = document.createElement('div');
-  container.style.cssText = 'width:100%;max-width:900px;max-height:90vh;background:var(--panel);border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;';
+  container.style.cssText = 'width:100%;height:100%;max-width:1000px;background:var(--panel);border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);';
   
   const header = document.createElement('div');
-  header.style.cssText = 'padding:20px;border-bottom:1px solid rgba(0,255,136,0.1);display:flex;justify-content:space-between;align-items:center;';
-  header.innerHTML = '<h2 style="margin:0;color:#00FF88">' + certCard.querySelector('h3').textContent + '</h2>';
+  header.style.cssText = 'padding:16px 20px;border-bottom:1px solid rgba(0,255,136,0.1);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;';
+  header.innerHTML = '<h2 style="margin:0;color:#00FF88;font-size:1.3rem;overflow:hidden;text-overflow:ellipsis">' + certCard.querySelector('h3').textContent + '</h2>';
   
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '✕';
-  closeBtn.style.cssText = 'background:transparent;border:0;color:var(--muted);font-size:2rem;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease;';
-  closeBtn.onmouseover = () => closeBtn.style.cssText += 'color:#00FF88;background:rgba(0,255,136,0.1);';
-  closeBtn.onmouseout = () => closeBtn.style.cssText = 'background:transparent;border:0;color:var(--muted);font-size:2rem;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease;';
+  closeBtn.style.cssText = 'background:transparent;border:0;color:var(--muted);font-size:1.8rem;cursor:pointer;padding:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease;flex-shrink:0;';
+  closeBtn.onmouseover = () => { closeBtn.style.color = '#00FF88'; closeBtn.style.background = 'rgba(0,255,136,0.1)'; };
+  closeBtn.onmouseout = () => { closeBtn.style.color = 'var(--muted)'; closeBtn.style.background = 'transparent'; };
   closeBtn.onclick = () => closeCertificateOverlay();
   header.appendChild(closeBtn);
   
   const pdfViewer = document.createElement('div');
-  pdfViewer.style.cssText = 'flex:1;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden;';
+  pdfViewer.style.cssText = 'flex:1;display:flex;align-items:center;justify-content:center;padding:12px;overflow:auto;background:rgba(0,0,0,0.3);';
   
   const iframe = document.createElement('iframe');
-  iframe.src = pdfUrl + '#view=FitH';
-  iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:8px;';
+  iframe.src = pdfUrl + '#zoom=page-fit&view=fit';
+  iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:8px;background:#fff;';
   pdfViewer.appendChild(iframe);
   
   container.appendChild(header);
