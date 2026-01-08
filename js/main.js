@@ -44,8 +44,9 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   })
 });
 
-// Smart navbar hide/show on scroll
+// Smart navbar hide/show on scroll with mouse tracking
 let lastScrollTop = 0;
+let lastMouseY = 0;
 const header = document.querySelector('.site-header');
 const scrollThreshold = 5; // pixels to scroll before triggering hide/show
 
@@ -71,6 +72,21 @@ window.addEventListener('scroll', function() {
   
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 }, false);
+
+// Show navbar on hover at top or mouse movement upward
+document.addEventListener('mousemove', function(e) {
+  const currentScroll = window.pageYOffset;
+  
+  // Show navbar if hovering near top or moving mouse upward
+  if (e.clientY < 80) {
+    header.style.transform = 'translateY(0)';
+  } else if (currentScroll > 600 && e.clientY < lastMouseY) {
+    // Mouse moving upward - show navbar briefly
+    header.style.transform = 'translateY(0)';
+  }
+  
+  lastMouseY = e.clientY;
+});
 
 // keyboard close modal
 document.addEventListener('keydown', function(e){
