@@ -1,10 +1,10 @@
 :root{
-  --bg:#071226;
-  --panel:#0b1a2a;
-  --muted:#9aa7b6;
-  --text:#e6eef6;
-  --accent:#00AFCD;
-  --glass: rgba(255,255,255,0.03);
+  --bg:#111111;
+  --panel:#1A1A1A;
+  --muted:#888888;
+  --text:#FFFFFF;
+  --accent:#00FF88;
+  --glass: rgba(255,255,255,0.02);
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;padding:0;font-family:"Inter", "Montserrat", sans-serif;background:var(--bg);color:var(--text);line-height:1.6}

@@ -1,20 +1,20 @@
 /* Cards, project, timeline, footer styling */
-.card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 6px 18px rgba(2,6,23,0.4);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
-.card:hover{border-color:rgba(0,175,205,0.2);box-shadow:0 12px 32px rgba(0,175,205,0.15);transform:translateY(-4px)}
+.card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(0,255,136,0.05);box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
+.card:hover{border-color:rgba(0,255,136,0.25);box-shadow:0 12px 32px rgba(0,255,136,0.2);transform:translateY(-4px)}
 .card h3{margin:0 0 8px 0;font-size:1.1rem}
 .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.tag{background:rgba(0,175,205,0.08);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:11px;border:1px solid rgba(0,175,205,0.15);transition:all 0.2s ease}
-.tag:hover{background:rgba(0,175,205,0.12);border-color:rgba(0,175,205,0.3)}
+.tag{background:rgba(0,255,136,0.08);color:#00FF88;padding:6px 10px;border-radius:999px;font-size:11px;border:1px solid rgba(0,255,136,0.2);transition:all 0.2s ease}
+.tag:hover{background:rgba(0,255,136,0.15);border-color:rgba(0,255,136,0.4)}
 .project .links{display:flex;gap:12px;margin-top:12px}
-.project .links a{display:inline-block;padding:6px 12px;background:rgba(0,175,205,0.1);border-radius:6px;font-size:0.9rem;transition:all 0.2s ease}
-.project .links a:hover{background:rgba(0,175,205,0.2)}
+.project .links a{display:inline-block;padding:6px 12px;background:rgba(0,255,136,0.08);border-radius:6px;font-size:0.9rem;transition:all 0.2s ease}
+.project .links a:hover{background:rgba(0,255,136,0.15)}
 .timeline{display:flex;flex-direction:column;gap:16px}
 .timeline-item{display:flex;gap:16px;align-items:flex-start}
 .timeline-item .meta{min-width:140px;color:var(--muted);font-size:13px;flex-shrink:0}
-.footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05);text-align:center;font-size:0.9rem}
-.modal{position:fixed;inset:0;background:rgba(2,6,23,0.85);display:flex;align-items:center;justify-content:center;padding:20px;z-index:100;opacity:0;visibility:hidden;transition:opacity 0.2s ease, visibility 0.2s ease}
+.footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(0,255,136,0.08);text-align:center;font-size:0.9rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:100;opacity:0;visibility:hidden;transition:opacity 0.2s ease, visibility 0.2s ease}
 .modal.active{opacity:1;visibility:visible}
-.modal .modal-card{max-width:900px;width:100%;background:var(--panel);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,0.05);max-height:90vh;overflow-y:auto;transform:scale(0.9);transition:transform 0.2s ease}
+.modal .modal-card{max-width:900px;width:100%;background:var(--panel);border-radius:16px;padding:32px;border:1px solid rgba(0,255,136,0.1);max-height:90vh;overflow-y:auto;transform:scale(0.9);transition:transform 0.2s ease}
 .modal.active .modal-card{transform:scale(1)}
 .close-btn{background:transparent;border:0;color:var(--muted);font-weight:700;font-size:1.5rem;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:all 0.2s ease}
-.close-btn:hover,.close-btn:focus{color:var(--text);background:rgba(255,255,255,0.08)}
+.close-btn:hover,.close-btn:focus{color:#00FF88;background:rgba(0,255,136,0.1)}
