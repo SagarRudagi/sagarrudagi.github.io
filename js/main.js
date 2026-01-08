@@ -210,6 +210,85 @@ if(projectModal) {
   });
 }
 
+// ===== EXPERIENCE MODAL FUNCTIONS =====
+function openExperienceModal(expCard) {
+  const title = expCard.getAttribute('data-title');
+  const company = expCard.getAttribute('data-company');
+  const location = expCard.getAttribute('data-location');
+  const period = expCard.getAttribute('data-period');
+  const tech = expCard.getAttribute('data-tech');
+  const description = expCard.getAttribute('data-description');
+  
+  const modal = document.getElementById('experienceModal');
+  
+  // Populate modal
+  document.getElementById('experienceModalTitle').textContent = title;
+  document.getElementById('modalCompany').textContent = company;
+  document.getElementById('modalLocation').textContent = location;
+  document.getElementById('modalPeriod').textContent = period;
+  document.getElementById('modalDescription').textContent = description;
+  
+  // Populate tech stack
+  const techContainer = document.getElementById('modalExpTech');
+  techContainer.innerHTML = '';
+  tech.split(',').forEach(t => {
+    const tag = document.createElement('span');
+    tag.className = 'tech-tag';
+    tag.textContent = t.trim();
+    techContainer.appendChild(tag);
+  });
+  
+  // Show modal
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  currentModal = modal;
+  
+  // Set up close button focus
+  const closeBtn = modal.querySelector('.experience-modal-close');
+  if(closeBtn) closeBtn.focus();
+}
+
+function closeExperienceModal() {
+  const modal = document.getElementById('experienceModal');
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  currentModal = null;
+}
+
+// Add click listeners to all experience cards
+document.querySelectorAll('.experience-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    // Don't open modal if clicking on a link inside the card
+    if(e.target.tagName === 'A' || e.target.closest('a')) return;
+    openExperienceModal(this);
+  });
+  // Make keyboard accessible
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', function(e) {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openExperienceModal(this);
+    }
+  });
+});
+
+// Close experience modal on backdrop click
+const experienceModal = document.getElementById('experienceModal');
+if(experienceModal) {
+  experienceModal.addEventListener('click', function(e) {
+    if(e.target === this) closeExperienceModal();
+  });
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && experienceModal.classList.contains('active')) {
+      closeExperienceModal();
+    }
+  });
+}
+
 // Certificate card click handlers
 document.querySelectorAll('#certificates .card').forEach(card => {
   const link = card.querySelector('a');

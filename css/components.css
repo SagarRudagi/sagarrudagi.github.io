@@ -47,6 +47,25 @@
 .project-modal .project-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
 .project-modal .project-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,255,136,0.1);color:#00FF88;border:1px solid rgba(0,255,136,0.3);border-radius:8px;text-decoration:none;transition:all 0.2s ease;font-weight:500}
 .project-modal .project-links a:hover{background:rgba(0,255,136,0.2);border-color:rgba(0,255,136,0.6);transform:translateX(2px)}
+
+/* Experience Modal Styles */
+.experience-modal{position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;padding:20px;z-index:101;opacity:0;visibility:hidden;transition:opacity 0.3s ease, visibility 0.3s ease}
+.experience-modal.active{opacity:1;visibility:visible}
+.experience-modal-content{max-width:800px;width:100%;background:var(--panel);border-radius:16px;padding:40px;border:1px solid rgba(0,255,136,0.15);max-height:90vh;overflow-y:auto;transform:scale(0.85);transition:transform 0.3s ease;box-shadow:0 20px 60px rgba(0,255,136,0.2);position:relative}
+.experience-modal.active .experience-modal-content{transform:scale(1)}
+.experience-modal-close{position:absolute;top:20px;right:20px;background:transparent;border:0;color:var(--muted);font-size:2rem;cursor:pointer;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease}
+.experience-modal-close:hover{color:#00FF88;background:rgba(0,255,136,0.1)}
+.experience-modal h2{margin:0 0 20px 0;color:#00FF88;font-size:1.8rem;padding-right:50px}
+.experience-meta{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;padding:16px;background:rgba(0,255,136,0.05);border-radius:8px;border-left:3px solid #00FF88}
+.experience-company{font-size:1.1rem;font-weight:600;color:var(--text)}
+.experience-location{font-size:0.95rem;color:var(--muted)}
+.experience-period{font-size:0.95rem;color:var(--muted);font-style:italic}
+.experience-description{margin:20px 0;line-height:1.8;color:var(--text);font-size:1.05rem}
+.experience-modal .tech-stack{margin:20px 0;padding:16px;background:rgba(0,255,136,0.05);border-left:3px solid #00FF88;border-radius:8px}
+.experience-modal .tech-stack h4{margin:0 0 8px 0;color:#00FF88}
+.experience-card{cursor:pointer;transition:transform 0.2s ease}
+.experience-card:hover{transform:translateY(-2px)}
+
 .cert-card.expanded{position:fixed;inset:20px;background:var(--panel);border-radius:16px;padding:40px;border:1px solid rgba(0,255,136,0.15);z-index:101;overflow-y:auto;max-height:calc(100vh - 40px);box-shadow:0 20px 60px rgba(0,255,136,0.25)}
 .cert-card.expanded .cert-close{position:absolute;top:20px;right:20px;background:transparent;border:0;color:var(--muted);font-size:1.8rem;cursor:pointer;padding:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease}
 .cert-card.expanded .cert-close:hover{color:#00FF88;background:rgba(0,255,136,0.1)}
