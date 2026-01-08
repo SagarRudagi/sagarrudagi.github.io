@@ -192,14 +192,14 @@ function expandCertificate(certCard, pdfUrl) {
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:102;padding:16px;';
   
   const container = document.createElement('div');
-  container.style.cssText = 'width:100%;height:100%;max-width:1200px;background:#fff;border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);position:relative;';
+  container.style.cssText = 'width:100%;height:100%;max-width:1200px;background:#1A1A1A;border-radius:16px;border:1px solid rgba(0,255,136,0.15);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,255,136,0.25);position:relative;';
   
   const header = document.createElement('div');
-  header.style.cssText = 'padding:12px 16px;border-bottom:1px solid #e0e0e0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;background:#fff;z-index:10;';
+  header.style.cssText = 'padding:12px 16px;border-bottom:1px solid rgba(0,255,136,0.1);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;background:#1A1A1A;z-index:10;';
   
   const titleDiv = document.createElement('div');
   titleDiv.style.cssText = 'display:flex;gap:12px;align-items:center;flex:1;';
-  titleDiv.innerHTML = '<h2 style="margin:0;color:#111;font-size:1.2rem;overflow:hidden;text-overflow:ellipsis;"></h2>';
+  titleDiv.innerHTML = '<h2 style="margin:0;color:#fff;font-size:1.2rem;overflow:hidden;text-overflow:ellipsis;"></h2>';
   titleDiv.querySelector('h2').textContent = certName;
   header.appendChild(titleDiv);
   
@@ -219,15 +219,15 @@ function expandCertificate(certCard, pdfUrl) {
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '✕';
   closeBtn.title = 'Close (ESC)';
-  closeBtn.style.cssText = 'background:transparent;border:0;color:#666;font-size:1.6rem;cursor:pointer;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:all 0.2s ease;';
-  closeBtn.onmouseover = () => { closeBtn.style.background = 'rgba(0,0,0,0.1)'; closeBtn.style.color = '#000'; };
-  closeBtn.onmouseout = () => { closeBtn.style.background = 'transparent'; closeBtn.style.color = '#666'; };
+  closeBtn.style.cssText = 'background:transparent;border:0;color:#999;font-size:1.6rem;cursor:pointer;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:all 0.2s ease;';
+  closeBtn.onmouseover = () => { closeBtn.style.background = 'rgba(0,255,136,0.1)'; closeBtn.style.color = '#00FF88'; };
+  closeBtn.onmouseout = () => { closeBtn.style.background = 'transparent'; closeBtn.style.color = '#999'; };
   closeBtn.onclick = () => closeCertificateOverlay();
   btnContainer.appendChild(closeBtn);
   header.appendChild(btnContainer);
   
   const contentContainer = document.createElement('div');
-  contentContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#f9f9f9;padding:20px;';
+  contentContainer.style.cssText = 'flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#111111;padding:20px;';
   
   const img = document.createElement('img');
   img.src = imageUrl;
@@ -235,7 +235,7 @@ function expandCertificate(certCard, pdfUrl) {
   img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);';
   img.onerror = () => {
     // Fallback if image not found
-    contentContainer.innerHTML = '<div style="text-align:center;color:#999;"><p style="margin:0;font-size:1.1rem;">Certificate image not available</p><p style="margin:8px 0 0 0;font-size:0.9rem;">Please download the PDF to view the certificate</p></div>';
+    contentContainer.innerHTML = '<div style="text-align:center;color:#999;"><p style="margin:0;font-size:1.1rem;">Certificate image not available</p><p style="margin:8px 0 0 0;font-size:0.9rem;color:#666;">Please download the PDF to view the certificate</p></div>';
   };
   contentContainer.appendChild(img);
   
