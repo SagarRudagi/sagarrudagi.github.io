@@ -1,7 +1,9 @@
 /* Cards, project, timeline, footer styling */
-.card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(0,255,136,0.05);box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1)}
+.card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(0,255,136,0.05);box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;right:0;width:0;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,136,0.1));border-radius:12px;transition:width 0.3s ease;pointer-events:none}
 .card:hover{border-color:rgba(0,255,136,0.25);box-shadow:0 12px 32px rgba(0,255,136,0.2);transform:translateY(-4px)}
-.card.project{cursor:pointer;position:relative}
+.card:hover::before{width:100%}
+.card.project{cursor:pointer}
 .card.project::after{content:'';position:absolute;top:0;right:0;width:0;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,136,0.1));border-radius:12px;transition:width 0.3s ease}
 .card.project:hover::after{width:100%}
 .expand-icon{float:right;font-size:1.2rem;color:var(--accent);transition:transform 0.3s ease}
