@@ -45,64 +45,71 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
 });
 
 // Smart navbar hide/show on scroll with mouse tracking
-let lastScrollTop = 0;
-let lastMouseY = 0;
-let navbarHidden = false;
-
-window.addEventListener('DOMContentLoaded', function() {
+(function() {
   const header = document.querySelector('.site-header');
   if (!header) return;
   
-  const scrollThreshold = 5;
+  let lastScrollTop = 0;
+  let lastMouseY = 0;
+  let isHidden = false;
+  const scrollThreshold = 10;
+  const heroHeight = 600;
   
+  // Function to show navbar
+  function showNavbar() {
+    if (isHidden) {
+      header.style.transform = 'translateY(0)';
+      isHidden = false;
+    }
+  }
+  
+  // Function to hide navbar
+  function hideNavbar() {
+    if (!isHidden) {
+      header.style.transform = 'translateY(-100%)';
+      isHidden = true;
+    }
+  }
+  
+  // Scroll event listener
   window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = window.scrollY || window.pageYOffset;
     
-    // Only trigger hide/show after scrolling past hero section
-    if (currentScroll > 600) {
-      // Scrolling down - hide navbar
-      if (currentScroll > lastScrollTop + scrollThreshold) {
-        if (!navbarHidden) {
-          header.style.transform = 'translateY(-100%)';
-          navbarHidden = true;
-        }
-      }
-      // Scrolling up - show navbar
-      else if (currentScroll < lastScrollTop - scrollThreshold) {
-        if (navbarHidden) {
-          header.style.transform = 'translateY(0)';
-          navbarHidden = false;
-        }
-      }
-    } else {
-      // Near top - always show navbar
-      if (navbarHidden) {
-        header.style.transform = 'translateY(0)';
-        navbarHidden = false;
-      }
+    // Always show navbar in hero section
+    if (currentScroll < heroHeight) {
+      showNavbar();
+      lastScrollTop = currentScroll;
+      return;
     }
     
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-  
-  // Show navbar on hover at top or mouse movement upward
-  document.addEventListener('mousemove', function(e) {
-    const currentScroll = window.pageYOffset;
+    // Past hero section - hide on scroll down, show on scroll up
+    if (currentScroll > lastScrollTop + scrollThreshold) {
+      // Scrolling down
+      hideNavbar();
+    } else if (currentScroll < lastScrollTop - scrollThreshold) {
+      // Scrolling up
+      showNavbar();
+    }
     
-    // Show navbar if hovering near top
+    lastScrollTop = currentScroll;
+  }, { passive: true });
+  
+  // Mouse move event listener - show on top hover or upward movement
+  document.addEventListener('mousemove', function(e) {
+    const currentScroll = window.scrollY || window.pageYOffset;
+    
+    // Show if mouse near top of screen
     if (e.clientY < 100) {
-      header.style.transform = 'translateY(0)';
-      navbarHidden = false;
-    } 
-    // Mouse moving upward while scrolled down
-    else if (currentScroll > 600 && e.clientY < lastMouseY - 10) {
-      header.style.transform = 'translateY(0)';
-      navbarHidden = false;
+      showNavbar();
+    }
+    // Show if mouse moving upward while scrolled down
+    else if (currentScroll > heroHeight && e.clientY < lastMouseY - 5) {
+      showNavbar();
     }
     
     lastMouseY = e.clientY;
-  });
-});
+  }, { passive: true });
+})();
 
 
 // keyboard close modal
