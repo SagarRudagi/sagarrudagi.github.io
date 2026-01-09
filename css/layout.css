@@ -2,6 +2,7 @@ header.site-header{position:fixed;top:0;left:0;right:0;z-index:40;background:lin
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand .name{font-weight:700;letter-spacing:1px}
+.brand .brand-cursor{color:#00FF88;font-weight:800;margin-left:6px;font-size:1.05em;letter-spacing:0}
 .site-nav{display:flex;gap:16px;align-items:center}
 .site-nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
 .site-nav a:hover{color:var(--text);background:var(--glass)}
