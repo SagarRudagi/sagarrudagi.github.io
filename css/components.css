@@ -48,7 +48,7 @@
 .project-modal .full-description li{margin-bottom:12px;padding-left:24px;position:relative}
 .project-modal .full-description li::before{content:'▹';position:absolute;left:0;color:#00FF88;font-weight:bold;font-size:1.2rem}
 .project-modal .full-description strong{color:#00FF88;font-weight:600}
-.project-modal .project-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.project-modal .project-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;justify-content:center}
 .project-modal .project-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,255,136,0.1);color:#00FF88;border:1px solid rgba(0,255,136,0.3);border-radius:8px;text-decoration:none;transition:all 0.2s ease;font-weight:500}
 .project-modal .project-links a:hover{background:rgba(0,255,136,0.2);border-color:rgba(0,255,136,0.6);transform:translateX(2px)}
 
