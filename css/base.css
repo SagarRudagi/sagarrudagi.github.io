@@ -17,3 +17,8 @@ button{font-family:inherit;cursor:pointer;transition:all 0.2s ease}
 button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px}
 .muted{color:var(--muted)}
 button:active{transform:scale(0.98)}
+html{zoom:0.9}
+@supports not (zoom: 1){
+  html{transform:scale(0.9);transform-origin:top left;width:111.12%}
+  body{overflow-x:hidden}
+}
