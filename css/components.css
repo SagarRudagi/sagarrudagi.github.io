@@ -80,3 +80,17 @@
 .cert-card.expanded .cert-close{position:absolute;top:20px;right:20px;background:transparent;border:0;color:var(--muted);font-size:1.8rem;cursor:pointer;padding:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s ease}
 .cert-card.expanded .cert-close:hover{color:#00FF88;background:rgba(0,255,136,0.1)}
 .cert-pdf-viewer{margin-top:20px;width:100%;height:600px;border:1px solid rgba(0,255,136,0.1);border-radius:8px}
+
+/* Contact Section Styles */
+.contact-section{background:linear-gradient(180deg,rgba(0,255,136,0.02) 0%,rgba(0,255,136,0.05) 100%);border-top:1px solid rgba(0,255,136,0.1)}
+.contact-subtitle{text-align:center;color:var(--muted);font-size:1.1rem;margin:-10px 0 40px 0;font-style:italic}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:40px}
+.contact-group{background:var(--panel);padding:24px;border-radius:12px;border:1px solid rgba(0,255,136,0.1);transition:all 0.3s ease}
+.contact-group:hover{border-color:rgba(0,255,136,0.3);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,255,136,0.15)}
+.contact-group-title{color:#00FF88;font-size:1.1rem;margin:0 0 16px 0;padding-bottom:12px;border-bottom:2px solid rgba(0,255,136,0.2);text-align:center}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.1);border-radius:8px;text-decoration:none;color:var(--text);transition:all 0.3s ease;font-weight:500}
+.contact-link:hover{background:rgba(0,255,136,0.15);border-color:rgba(0,255,136,0.4);transform:translateX(8px);box-shadow:0 4px 12px rgba(0,255,136,0.2)}
+.contact-link img{width:32px;height:32px;flex-shrink:0}
+.contact-link span{font-size:0.95rem}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:24px}}
