@@ -226,7 +226,7 @@ function openExperienceModal(expCard) {
   document.getElementById('modalCompany').textContent = company;
   document.getElementById('modalLocation').textContent = location;
   document.getElementById('modalPeriod').textContent = period;
-  document.getElementById('modalDescription').textContent = description;
+  document.getElementById('modalDescription').innerHTML = '<ul>' + description + '</ul>';
   
   // Populate tech stack
   const techContainer = document.getElementById('modalExpTech');

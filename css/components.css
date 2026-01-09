@@ -61,6 +61,10 @@
 .experience-location{font-size:0.95rem;color:var(--muted)}
 .experience-period{font-size:0.95rem;color:var(--muted);font-style:italic}
 .experience-description{margin:20px 0;line-height:1.8;color:var(--text);font-size:1.05rem}
+.experience-description ul{list-style:none;padding:0;margin:0}
+.experience-description li{margin-bottom:12px;padding-left:24px;position:relative}
+.experience-description li::before{content:'▹';position:absolute;left:0;color:#00FF88;font-weight:bold;font-size:1.2rem}
+.experience-description strong{color:#00FF88;font-weight:600}
 .experience-modal .tech-stack{margin:20px 0;padding:16px;background:rgba(0,255,136,0.05);border-left:3px solid #00FF88;border-radius:8px}
 .experience-modal .tech-stack h4{margin:0 0 8px 0;color:#00FF88}
 .experience-card{cursor:pointer;transition:transform 0.2s ease}
