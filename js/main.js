@@ -135,7 +135,7 @@ function openProjectModal(projectCard) {
   
   // Populate modal
   document.getElementById('projectModalTitle').textContent = title;
-  document.querySelector('.project-modal-content .full-description').textContent = description;
+  document.querySelector('.project-modal-content .full-description').innerHTML = '<ul>' + description + '</ul>';
   
   // Populate tech stack
   const techTagsContainer = document.getElementById('modalTechTags');
