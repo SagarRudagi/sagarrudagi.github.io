@@ -329,11 +329,12 @@ if(experienceModal) {
 
 // Certificate card click handlers
 document.querySelectorAll('#certificates .card').forEach(card => {
-  const link = card.querySelector('a');
-  const pdfUrl = card.getAttribute('data-cert-href') || (link && link.getAttribute('href'));
+  const pdfUrl = card.getAttribute('data-cert-href');
   if(!pdfUrl) return;
 
-  card.addEventListener('click', function() {
+  card.addEventListener('click', function(e) {
+    // Prevent navigation if clicking on links inside card
+    if(e.target.tagName === 'A' || e.target.closest('a')) return;
     expandCertificate(this, pdfUrl);
   });
 
