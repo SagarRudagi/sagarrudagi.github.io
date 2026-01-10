@@ -149,6 +149,20 @@ document.addEventListener('click', function(e){
   }
 });
 
+function addTapIndicators(selectors){
+  selectors.forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(card){
+      if(card.querySelector('.tap-indicator')) return;
+      var indicator = document.createElement('span');
+      indicator.className = 'tap-indicator';
+      indicator.setAttribute('aria-hidden','true');
+      card.appendChild(indicator);
+    });
+  });
+}
+
+addTapIndicators(['.card.project','.experience-card','#certificates .card']);
+
 // Project card click handlers
 function openProjectModal(projectCard) {
   const modal = document.getElementById('projectModal');
@@ -316,23 +330,21 @@ if(experienceModal) {
 // Certificate card click handlers
 document.querySelectorAll('#certificates .card').forEach(card => {
   const link = card.querySelector('a');
-  if(link) {
-    const pdfUrl = link.getAttribute('href');
-    card.addEventListener('click', function(e) {
-      // Only open expanded view if not clicking the link itself
-      if(e.target === link) return;
+  const pdfUrl = card.getAttribute('data-cert-href') || (link && link.getAttribute('href'));
+  if(!pdfUrl) return;
+
+  card.addEventListener('click', function() {
+    expandCertificate(this, pdfUrl);
+  });
+
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', function(e) {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
       expandCertificate(this, pdfUrl);
-    });
-    // Make keyboard accessible
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
-    card.addEventListener('keydown', function(e) {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        expandCertificate(this, pdfUrl);
-      }
-    });
-  }
+    }
+  });
 });
 
 function expandCertificate(certCard, pdfUrl) {
