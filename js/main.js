@@ -94,6 +94,30 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach(function(a){
   }, { passive: true });
 })();
 
+// Fade-in-up on scroll
+(function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, observerOptions);
+
+  const animatedElements = document.querySelectorAll('.card, .timeline-item, .skill, .hero-inner, .hero-visual');
+  animatedElements.forEach(function(el) {
+    el.classList.add('fade-in-up');
+    observer.observe(el);
+  });
+})();
+
 
 // keyboard close modal
 document.addEventListener('keydown', function(e){
